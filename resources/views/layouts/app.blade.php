@@ -16,6 +16,7 @@
       <script src="{{ URL::asset('js/lib/p5.speech.js') }}"></script>
       <script src="{{ URL::asset('js/voice.js') }}"></script>
       <script src="{{ URL::asset('js/gallery.js') }}"></script>
+      <script src="{{ URL::asset('js/contacts.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
