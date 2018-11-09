@@ -1,4 +1,4 @@
-var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
+var myRec = new p5.SpeechRec('en-US', gallery); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
 myRec.interimResults = true; // allow partial recognition (faster, less accurate) // new P5.Speech object
 
@@ -15,7 +15,7 @@ function gallery(){
 var mostrecentword = myRec.resultString.split(' ').pop();
 
 if(mostrecentword.indexOf("next")!==-1){
-    document.getElementsById("next").click();
+    document.getElementsByClassName("next").click();
 }
 
 
