@@ -67,8 +67,6 @@ else if(mostrecentword.indexOf("name")!==-1){
 
 }else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
-}else if(mostrecentword.indexOf("next")!==-1){
-    document.getElementsByClassName("next").click();
 }
 
 
