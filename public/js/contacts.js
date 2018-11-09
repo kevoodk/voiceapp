@@ -12,10 +12,16 @@ myRec.start(); // start engine
 function contacts(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
-var mostrecentword = myRec.resultString.split(' ').pop();
+var contactWords = myRec.resultString.split(' ').pop();
+console.log(contactWords);
+if(contactWords.indexOf("kevin")!==-1){
+  const stringArray = [];
+  stringArray.push(contactWords);
+  const stopIndex = stringArray.indexOf('stop');
+  for(let i = 0; i < stopIndex-1; i++){
 
-if(mostrecentword.indexOf("no")!==-1){
-    document.getElementsById("question").focus();
+}
+
 }
 
 
