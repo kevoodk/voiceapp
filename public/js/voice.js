@@ -13,10 +13,17 @@ function parseResult(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
+
+  document.getElementById("robot-text").value = mostrecentword;
 if(mostrecentword.indexOf("login")!==-1){
 window.location.href = "login";
 }else if(mostrecentword.indexOf("register")!==-1){
 window.location.href = "register"
+}else if(mostrecentword.indexOf("down")!==-1){
+window.scrollBy(0, 100);
+}
+else if(mostrecentword.indexOf("up")!==-1){
+window.scrollBy(0, -100);
 }
 else if(mostrecentword.indexOf("name")!==-1){
   let str =  myRec.resultString;
