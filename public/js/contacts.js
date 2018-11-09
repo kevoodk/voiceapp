@@ -14,8 +14,8 @@ function contacts(){
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
 
-if(mostrecentword.indexOf("next")!==-1){
-    document.getElementsById("next").click();
+if(mostrecentword.indexOf("no")!==-1){
+    document.getElementsById("question").focus();
 }
 
 
