@@ -50,7 +50,10 @@ else if(mostrecentword.indexOf("name")!==-1){
 
   document.getElementById("email").value = str;
 
-}else if(mostrecentword.indexOf("password")!==-1){
+}else if(mostrecentword.indexOf("clear")!==-1){
+  document.getElementById("email").value = "";
+}
+else if(mostrecentword.indexOf("password")!==-1){
   let str =  myRec.resultString;
   let removeWords = 'password';
   re = new RegExp(removeWords, 'gi');
