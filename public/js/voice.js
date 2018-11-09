@@ -18,6 +18,12 @@ if(mostrecentword.indexOf("login")!==-1){
 window.location.href = "login";
 }else if(mostrecentword.indexOf("register")!==-1){
 window.location.href = "register"
+}else if(mostrecentword.indexOf("home")!==-1){
+window.location.href = "home"
+}else if(mostrecentword.indexOf("contacts")!==-1){
+window.location.href = "contacts"
+}else if(mostrecentword.indexOf("gallery")!==-1){
+window.location.href = "gallery"
 }else if(mostrecentword.indexOf("down")!==-1){
 window.scrollBy(0, 100);
 }
