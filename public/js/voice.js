@@ -56,6 +56,12 @@ else if(mostrecentword.indexOf("name")!==-1){
     document.getElementById("register").click();
 }else if(mostrecentword.indexOf("access")!==-1){
     document.getElementById("login").click();
+}else if(mostrecentword.indexOf("hide")!==-1){
+    document.body.style.opacity = "0";
+
+}else if(mostrecentword.indexOf("show")!==-1){
+    document.body.style.opacity = "1";
+
 }
 
 
