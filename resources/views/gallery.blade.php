@@ -10,7 +10,7 @@
         </div>
 		<div class="nav">
 			<label for="img-6" class="prev">&#x2039;</label>
-			<label for="img-2" class="next">&#x203a;</label>
+			<label for="img-2" id="next" class="next">&#x203a;</label>
 		</div>
     </li>
 
