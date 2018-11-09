@@ -14,7 +14,6 @@ function parseResult(){
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
 
-  document.getElementById("robot-text").value = mostrecentword;
 if(mostrecentword.indexOf("login")!==-1){
 window.location.href = "login";
 }else if(mostrecentword.indexOf("register")!==-1){
