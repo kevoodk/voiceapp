@@ -15,7 +15,7 @@ function gallery(){
 var mostrecentword = myRec.resultString.split(' ').pop();
 
 if(mostrecentword.indexOf("next")!==-1){
-    document.getElementsByClassName("next").click();
+  document.querySelectorAll("next").click();
 }
 
 
