@@ -7,7 +7,7 @@ myRec.interimResults = true; // allow partial recognition (faster, less accurate
 function setup(){
 myRec.start(); // start engine
 }
-var menuArray = ["login", "register", "home", "gallery"];
+var menuArray = ["login", "register", "home", "gallery", "contacts"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", , "hide", "show"];
 function parseResult(){
