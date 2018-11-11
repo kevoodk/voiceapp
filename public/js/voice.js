@@ -1,11 +1,11 @@
 var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
 myRec.continuous = true; // do continuous recognition
 myRec.interimResults = true; // allow partial recognition (faster, less accurate) // new P5.Speech object
-
-
+var myVoice = new p5.Speech();
 
 function setup(){
-myRec.start(); // start engine
+myRec.start();
+ // start engine
 }
 var menuArray = ["login", "register", "home", "gallery", "contacts"];
 var inputArray = ["name", "email", "password", "access", "submit"];
@@ -63,6 +63,13 @@ else if(mostrecentword.indexOf("password")!==-1){
 
 }else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
+}else if(mostrecentword.indexOf("hello")!==-1){
+  var getUserName = document.getElementById("user-name").innerHTML;
+  var userToString = getUserName.toString();
+
+      var talk = commandsArray.toString();
+      myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
+      document.getElementById("robot-voice").innerHTML = talk;
 }
 
 

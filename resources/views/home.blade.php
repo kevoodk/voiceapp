@@ -16,7 +16,10 @@
 
                     You are logged in!
                 </div>
+
+                  <h1 id="robot-voice"></h1>
             </div>
+            <h1 style="text-align:center;"> Welcome <span id="user-name" style="font-weight:900;">  {{ Auth::user()->name }} </span><h1>
         </div>
     </div>
 </div>
