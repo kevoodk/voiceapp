@@ -7,23 +7,16 @@ myRec.interimResults = true; // allow partial recognition (faster, less accurate
 function setup(){
 myRec.start(); // start engine
 }
-
-
+var menuArray = ["login", "register", "home", "gallery"];
+var inputArray = ["name", "email", "password", "access", "submit"];
+var commandsArray = ["down", "up", , "hide", "show"];
 function parseResult(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
-
-if(mostrecentword.indexOf("login")!==-1){
-window.location.href = "login";
-}else if(mostrecentword.indexOf("register")!==-1){
-window.location.href = "register"
-}else if(mostrecentword.indexOf("home")!==-1){
-window.location.href = "home"
-}else if(mostrecentword.indexOf("contacts")!==-1){
-window.location.href = "contacts"
-}else if(mostrecentword.indexOf("gallery")!==-1){
-window.location.href = "gallery"
+var chechMenuArray = menuArray.includes(mostrecentword);
+if(chechMenuArray){
+window.location.href = mostrecentword;
 }else if(mostrecentword.indexOf("down")!==-1){
 window.scrollBy(0, 100);
 }
@@ -61,7 +54,7 @@ else if(mostrecentword.indexOf("password")!==-1){
   document.getElementById("password").value = str;
   document.getElementById("password-confirm").value = str;
 
-}else if(mostrecentword.indexOf("hello")!==-1){
+}else if(mostrecentword.indexOf("submit")!==-1){
     document.getElementById("register").click();
 }else if(mostrecentword.indexOf("access")!==-1){
     document.getElementById("login").click();
