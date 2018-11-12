@@ -1,8 +1,9 @@
 var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
-myRec.continuous = false; // do continuous recognition
+myRec.continuous = true; // do continuous recognition
 myRec.interimResults = false; // allow partial recognition (faster, less accurate) // new P5.Speech object
 var myVoice = new p5.Speech();
 let stringArray = [];
+var i = 0;
 function setup(){
 myRec.start();
  // start engine
@@ -69,7 +70,29 @@ else if(mostrecentword.indexOf("password")!==-1){
     document.body.style.opacity = "1";
 }else if(mostrecentword.indexOf("next")!==-1){
   $(document).ready(function(){
-$('.next')[0].click();
+var numItems = $('.next').length;
+
+$('.next')[i].click();
+
+if(i > numItems){
+  i = 0;
+}else{
+i++;
+}
+
+  });
+}else if(mostrecentword.indexOf("previous")!==-1){
+  $(document).ready(function(){
+var numItems = $('.prev').length;
+
+$('.prev')[i].click();
+
+if(i > numItems){
+  i = 0;
+}else{
+i--;
+}
+
   });
 }else if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
