@@ -2,81 +2,59 @@
 
 @section('content')
 
-<ul class="slides">
-    <input type="radio" name="radio-btn" id="img-1" checked />
-    <li class="slide-container">
-		<div class="slide">
-			<img src="http://farm9.staticflickr.com/8072/8346734966_f9cd7d0941_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-6" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-2" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+<div class="slider">
+  <ul>
+    <li id="no-js-slider-1" class="slide">
+      <img src="https://lh3.googleusercontent.com/-PcDDGh9C6Uk/UUoRYu8TmGI/AAAAAAAAADk/bVCVnUEott4/s1231/2.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-10">prev</a>
+      <a id="next" class="next" href="#no-js-slider-2">next</a>
     </li>
-
-    <input type="radio" name="radio-btn" id="img-2" />
-    <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8504/8365873811_d32571df3d_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-1" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-3" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+    <li id="no-js-slider-2" class="slide">
+      <img src="https://lh5.googleusercontent.com/-ImESS5vXwTQ/UUoRZtDDdwI/AAAAAAAAAD0/mBlvPxXMuDU/s1231/3.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-1">prev</a>
+      <a id="next" class="next" href="#no-js-slider-3">next</a>
     </li>
-
-    <input type="radio" name="radio-btn" id="img-3" />
-    <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8068/8250438572_d1a5917072_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-2" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-4" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+    <li id="no-js-slider-3" class="slide">
+      <img src="https://lh3.googleusercontent.com/-a4HykmTjnLw/UUoRZ9AOzNI/AAAAAAAAAD8/bsVqg8naI2o/s1231/4.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-2">prev</a>
+      <a id="next" class="next" href="#no-js-slider-4">next</a>
     </li>
-
-    <input type="radio" name="radio-btn" id="img-4" />
-    <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8061/8237246833_54d8fa37f0_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-3" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-5" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+    <li id="no-js-slider-4" class="slide">
+      <img src="https://lh5.googleusercontent.com/-lmIWz4ADxc0/UUoRaFjdNXI/AAAAAAAAAEI/widPZMMiBVM/s1231/5.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-3">prev</a>
+      <a id="next" class="next" href="#no-js-slider-5">next</a>
     </li>
-
-    <input type="radio"  id="back" name="radio-btn" id="img-5" />
-    <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8055/8098750623_66292a35c0_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-4" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-6" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+    <li id="no-js-slider-5" class="slide">
+      <img src="https://lh3.googleusercontent.com/-ZbMYEV9F1Bc/UUoRajU3qmI/AAAAAAAAAEE/Y8nB8gecGgU/s1000/6.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-4">prev</a>
+      <a id="next" class="next" href="#no-js-slider-6">next</a>
     </li>
-
-    <input type="radio" name="radio-btn" id="img-6" />
-    <li class="slide-container">
-        <div class="slide">
-          <img src="http://farm9.staticflickr.com/8195/8098750703_797e102da2_z.jpg" />
-        </div>
-		<div class="nav">
-			<label for="img-5" id="back" name="back" class="prev">&#x2039;</label>
-			<label for="img-1" id="next" name="next" class="next">&#x203a;</label>
-		</div>
+    <li id="no-js-slider-6" class="slide">
+      <img src="https://lh6.googleusercontent.com/-88kTocv470A/UUoRbG0sNgI/AAAAAAAAAEU/XNupHrK1pvE/s1231/7.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-5">prev</a>
+      <a id="next" class="next" href="#no-js-slider-7">next</a>
     </li>
-
-    <li class="nav-dots">
-      <label for="img-1" class="nav-dot" id="img-dot-1"></label>
-      <label for="img-2" class="nav-dot" id="img-dot-2"></label>
-      <label for="img-3" class="nav-dot" id="img-dot-3"></label>
-      <label for="img-4" class="nav-dot" id="img-dot-4"></label>
-      <label for="img-5" class="nav-dot" id="img-dot-5"></label>
-      <label for="img-6" class="nav-dot" id="img-dot-6"></label>
+    <li id="no-js-slider-7" class="slide">
+      <img src="https://lh3.googleusercontent.com/-O_0Ce7JxwJo/UUoRbZ6g4HI/AAAAAAAAAEc/O0mmZ0t0U88/s1231/8.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-6">prev</a>
+      <a id="next" class="next" href="#no-js-slider-8">next</a>
     </li>
-</ul>
+    <li id="no-js-slider-8" class="slide">
+      <img src="https://lh6.googleusercontent.com/-w7N6XM1WsqY/UUoRbRFPCeI/AAAAAAAAAEg/u3KB5ykIk9g/s1231/9.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-7">prev</a>
+      <a id="next" class="next" href="#no-js-slider-9">next</a>
+    </li>
+    <li id="no-js-slider-9" class="slide">
+      <img src="https://lh6.googleusercontent.com/-7Rf9aSkpphc/UUoRYyoTOWI/AAAAAAAAADw/WRl-jV1fISc/s1000/10.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-8">prev</a>
+      <a id="next" class="next" href="#no-js-slider-10">next</a>
+    </li>
+    <li id="no-js-slider-10" class="slide">
+      <img src="https://lh6.googleusercontent.com/-UH8Tl-EG78c/UUoRYmvOWoI/AAAAAAAAADg/EIT1YomfqBo/s1231/1.jpeg.jpg">
+      <a id="back" class="prev" href="#no-js-slider-9">prev</a>
+      <a id="next" class="next" href="#no-js-slider-1">next</a>
+    </li>
+  </ul>
+</div>
 
 @endsection
