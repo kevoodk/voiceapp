@@ -63,6 +63,8 @@ else if(mostrecentword.indexOf("password")!==-1){
 
 }else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
+}else if(mostrecentword.indexOf("next")!==-1){
+  document.getElementById("next").value = "";
 }else if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
   var userToString = getUserName.toString();
@@ -70,7 +72,12 @@ else if(mostrecentword.indexOf("password")!==-1){
       var talk = commandsArray.toString();
       myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
       document.getElementById("robot-voice").innerHTML = talk;
+}if(mostrecentword.indexOf("start")!==-1){
+  const stringArray = [];
+  stringArray.push(mostrecentword);
+  const stopIndex = stringArray.indexOf('stop');
+  for(let i = 0; i < stopIndex-1; i++){
+    console.log(stringArray);
 }
-
-
+}
 }
