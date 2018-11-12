@@ -68,7 +68,8 @@ else if(mostrecentword.indexOf("password")!==-1){
 }else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
 }else if(mostrecentword.indexOf("next")!==-1){
-  document.getElementById("next").click();
+  var x = document.querySelectorAll(".next");
+  x[0].click();
 }else if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
   var userToString = getUserName.toString();
