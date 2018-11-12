@@ -1,8 +1,8 @@
 var myRec = new p5.SpeechRec('en-US', parseResult); // new P5.SpeechRec object
-myRec.continuous = true; // do continuous recognition
-myRec.interimResults = true; // allow partial recognition (faster, less accurate) // new P5.Speech object
+myRec.continuous = false; // do continuous recognition
+myRec.interimResults = false; // allow partial recognition (faster, less accurate) // new P5.Speech object
 var myVoice = new p5.Speech();
-
+let stringArray = [];
 function setup(){
 myRec.start();
  // start engine
@@ -10,10 +10,14 @@ myRec.start();
 var menuArray = ["login", "register", "home", "gallery", "contacts"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", , "hide", "show"];
+
 function parseResult(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
+if(myRec.resultValue==true){
+stringArray.push(myRec.resultString);
+}
 var chechMenuArray = menuArray.includes(mostrecentword);
 if(chechMenuArray){
 window.location.href = mostrecentword;
@@ -64,7 +68,7 @@ else if(mostrecentword.indexOf("password")!==-1){
 }else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
 }else if(mostrecentword.indexOf("next")!==-1){
-  document.getElementById("next").value = "";
+  document.getElementById("next").click();
 }else if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
   var userToString = getUserName.toString();
@@ -72,12 +76,9 @@ else if(mostrecentword.indexOf("password")!==-1){
       var talk = commandsArray.toString();
       myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
       document.getElementById("robot-voice").innerHTML = talk;
-}if(mostrecentword.indexOf("start")!==-1){
-  const stringArray = [];
-  stringArray.push(mostrecentword);
-  const stopIndex = stringArray.indexOf('stop');
-  for(let i = 0; i < stopIndex-1; i++){
-    console.log(stringArray);
-}
+}if(mostrecentword.indexOf("remove")!==-1){
+     stringArray = [];
+}else if(mostrecentword.indexOf("stop")!==-1){
+    document.getElementById("question").innerHTML = stringArray;
 }
 }
