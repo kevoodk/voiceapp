@@ -15,7 +15,7 @@ var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 function parseResult(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
-var mostrecentword = myRec.resultString.split(' ').pop();
+var mostrecentword = myRec.resultString;
 if(myRec.resultValue==true){
 stringArray.push(myRec.resultString);
 }
@@ -104,21 +104,17 @@ else if(mostrecentword.indexOf("hello")!==-1){
 }
 // Start writing
 if(mostrecentword.indexOf("start")!==-1){
+      myVoice.speak("Ok, tell me what you want me to write, say stop when you are done");
      stringArray = [];
-}else if(mostrecentword.indexOf("stop")!==-1){
-    var removeStop = stringArray.indexOf('stop');
-    stringArray.splice(removeStop, 1);
-    document.getElementById("question").innerHTML = stringArray;
+}else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
+     var convertToString = stringArray.toString();
+     var convertToLower = convertToString.toLowerCase();
+     if(convertToLower.includes("hello world")){
+       convertToLower = convertToLower.replace(/\s+/g, '');
+     }
+
+    document.getElementById("question").innerHTML = convertToString;
 
 }
-if(mostrecentword.indexOf("find")!==1){
-  function findAndReplace(){
-  var index = stringArray.indexOf("find");
-    if(index >= 0 && index < stringArray.length - 1){
-       nextItem = stringArray[index + 1]
-       console.log(nextItem);
-    }
 
-  }
-}
 }
