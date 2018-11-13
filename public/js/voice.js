@@ -10,7 +10,7 @@ myRec.start();
 }
 var menuArray = ["login", "register", "home", "gallery", "contacts"];
 var inputArray = ["name", "email", "password", "access", "submit"];
-var commandsArray = ["down", "up", , "hide", "show"];
+var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 
 function parseResult(){
 // recognition system will often append words into phrases.
@@ -19,56 +19,54 @@ var mostrecentword = myRec.resultString.split(' ').pop();
 if(myRec.resultValue==true){
 stringArray.push(myRec.resultString);
 }
+var checkInputArray = inputArray.includes(mostrecentword);
 var chechMenuArray = menuArray.includes(mostrecentword);
 if(chechMenuArray){
 window.location.href = mostrecentword;
-}else if(mostrecentword.indexOf("down")!==-1){
+}
+if(checkInputArray){
+  let str =  myRec.resultString;
+  var mapObj = {
+     email:"",
+     name:"",
+     password:"",
+     at:"@",
+  };
+  str = str.replace(/email|at|name|password/gi, function(matched){
+    return mapObj[matched];
+  });
+  str = str.replace(/\s+/g, '');
+  if(mostrecentword.indexOf("name")!==-1){
+  document.getElementById("name").value = str;
+}else if(mostrecentword.indexOf("email")!==-1){
+  document.getElementById("email").value = str;
+}else if(mostrecentword.indexOf("password")!==-1){
+  document.getElementById("password").value = str;
+  document.getElementById("password-confirm").value = str;
+}
+}
+else if(mostrecentword.indexOf("submit")!==-1){
+    document.getElementById("register").click();
+}else if(mostrecentword.indexOf("access")!==-1){
+    document.getElementById("login").click();
+}
+// Scroll up and down
+if(mostrecentword.indexOf("down")!==-1){
 window.scrollBy(0, 100);
 }
 else if(mostrecentword.indexOf("up")!==-1){
 window.scrollBy(0, -100);
 }
-else if(mostrecentword.indexOf("name")!==-1){
-  let str =  myRec.resultString;
-  let removeWords = 'name';
-  re = new RegExp(removeWords, 'gi');
-  str = str.replace(re, '');
-  document.getElementById("name").value = str;
-
-}else if(mostrecentword.indexOf("email")!==-1){
-  let str =  myRec.resultString;
-  var mapObj = {
-     email:"",
-     at:"@",
-  };
-  str = str.replace(/email|at/gi, function(matched){
-    return mapObj[matched];
-  });
-  str = str.replace(/\s+/g, '');
-
-  document.getElementById("email").value = str;
-
-}else if(mostrecentword.indexOf("clear")!==-1){
-  document.getElementById("email").value = "";
+// Show / Hide the entire screen
+else if(mostrecentword.indexOf("show")!==-1){
+    document.body.style.opacity = "1";
 }
-else if(mostrecentword.indexOf("password")!==-1){
-  let str =  myRec.resultString;
-  let removeWords = 'password';
-  re = new RegExp(removeWords, 'gi');
-  str = str.replace(re, '');
-  document.getElementById("password").value = str;
-  document.getElementById("password-confirm").value = str;
-
-}else if(mostrecentword.indexOf("submit")!==-1){
-    document.getElementById("register").click();
-}else if(mostrecentword.indexOf("access")!==-1){
-    document.getElementById("login").click();
-}else if(mostrecentword.indexOf("hide")!==-1){
+else if(mostrecentword.indexOf("hide")!==-1){
     document.body.style.opacity = "0";
 
-}else if(mostrecentword.indexOf("show")!==-1){
-    document.body.style.opacity = "1";
-}else if(mostrecentword.indexOf("next")!==-1){
+}
+// next and previous gallery
+else if(mostrecentword.indexOf("next")!==-1){
   $(document).ready(function(){
 var numItems = $('.next').length;
 
@@ -94,16 +92,23 @@ i--;
 }
 
   });
-}else if(mostrecentword.indexOf("hello")!==-1){
+}
+// Show commands
+else if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
   var userToString = getUserName.toString();
 
       var talk = commandsArray.toString();
       myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
       document.getElementById("robot-voice").innerHTML = talk;
-}if(mostrecentword.indexOf("remove")!==-1){
+}
+// Start writing
+if(mostrecentword.indexOf("start")!==-1){
      stringArray = [];
 }else if(mostrecentword.indexOf("stop")!==-1){
+    var removeStop = stringArray.indexOf('stop');
+    stringArray.splice(removeStop, 1);
     document.getElementById("question").innerHTML = stringArray;
+
 }
 }
