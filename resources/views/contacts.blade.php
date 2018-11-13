@@ -10,5 +10,6 @@
   <textarea style="width:100%;" name="question" cols="40" rows="5" id="question"></textarea>
   <button type="submit">Send question</button>
 </form>
+<a href="geo:124.028582,-29.201930" target="_blank">Click here for map</a>
 
 @endsection

@@ -111,4 +111,14 @@ if(mostrecentword.indexOf("start")!==-1){
     document.getElementById("question").innerHTML = stringArray;
 
 }
+if(mostrecentword.indexOf("find")!==1){
+  function findAndReplace(){
+  var index = stringArray.indexOf("find");
+    if(index >= 0 && index < stringArray.length - 1){
+       nextItem = stringArray[index + 1]
+       console.log(nextItem);
+    }
+
+  }
+}
 }
