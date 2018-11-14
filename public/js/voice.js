@@ -68,6 +68,7 @@ else if(mostrecentword.indexOf("disappear")!==-1){
 }
 // next and previous gallery
 else if(mostrecentword.indexOf("next")!==-1){
+  newImage();
   $(document).ready(function(){
 var numItems = $('.next').length;
 
@@ -138,7 +139,7 @@ if(mostrecentword.indexOf("start")!==-1){
 }
 var keyword = "mountains";
 
-   $(document).ready(function(){
+   function newImage(){
 
        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
        {
@@ -146,13 +147,16 @@ var keyword = "mountains";
            tagmode: "any",
            format: "json"
        },
-       function(data) {
+       function (data) {
            var rnd = Math.floor(Math.random() * data.items.length);
 
            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+           var html = "<li class=\"slide\"> <img src=\""+  image_src +"\"><a  class=\"prev\"></a><a  class=\"next\"></a></li>";
+           document.getElementById("addImage").innerHTML = html;
 
-           $('body').css('background-image', "url('" + image_src + "')");
+           console.log(html);
+           // $('body').css('background-image', "url('" + image_src + "')");
 
        });
 
-   });
+   }
