@@ -8,6 +8,7 @@ function setup(){
 myRec.start();
  // start engine
 }
+$('defaultCanvas').remove();
 var menuArray = ["login", "register", "home", "gallery", "contacts"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
@@ -109,13 +110,22 @@ if(mostrecentword.indexOf("start")!==-1){
 }else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
-     if(convertToLower.includes("hello world")){
-       // convertToLower = convertToLower.replace(/\s+/g, '');
-       console.log('You said hello world');
-     }
+     if(convertToLower.includes("kevin hello")){
+       var edit = "kevin hello";
+
+        var text = convertToLower;
+        var result = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
+        if(text.indexOf(result)){
+          console.log(result.length);
+        }
+        var replaceFirst = convertToString.replace("kevin hello", "");
+        var replace = convertToString.replace(result, "blablabla");
+        console.log(replace);
+        document.getElementById("question").innerHTML = replace;
+     }else{
 
     document.getElementById("question").innerHTML = convertToString;
-
+  }
 }
 
 }
