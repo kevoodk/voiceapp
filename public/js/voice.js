@@ -112,14 +112,16 @@ if(mostrecentword.indexOf("start")!==-1){
      var convertToLower = convertToString.toLowerCase();
      if(convertToLower.includes("kevin hello")){
        var edit = "kevin hello";
-
+       var edit1 = "kevin with";
+       var result1 = "";
         var text = convertToLower;
         var result = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
-        if(text.indexOf(result)){
-          console.log(result.length);
-        }
+        if(text.includes(edit1)){
+
+        result1 = text.match(new RegExp(edit1 + '\\s(\\w+)'))[1];
+    }
         var replaceFirst = convertToString.replace("kevin hello", "");
-        var replace = convertToString.replace(result, "blablabla");
+        var replace = convertToString.replace(result, result1);
         console.log(replace);
         document.getElementById("question").innerHTML = replace;
      }else{
