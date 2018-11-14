@@ -15,7 +15,7 @@ var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 function parseResult(){
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
-var mostrecentword = myRec.resultString;
+var mostrecentword = myRec.resultString.split(' ').pop();
 if(myRec.resultValue==true){
 stringArray.push(myRec.resultString);
 }
@@ -110,7 +110,8 @@ if(mostrecentword.indexOf("start")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
      if(convertToLower.includes("hello world")){
-       convertToLower = convertToLower.replace(/\s+/g, '');
+       // convertToLower = convertToLower.replace(/\s+/g, '');
+       console.log('You said hello world');
      }
 
     document.getElementById("question").innerHTML = convertToString;
