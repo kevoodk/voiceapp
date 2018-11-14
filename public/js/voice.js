@@ -110,9 +110,9 @@ if(mostrecentword.indexOf("start")!==-1){
 }else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
-     if(convertToLower.includes("kevin hello")){
-       var find = "kevin hello";
-       var edit = "kevin with";
+     if(convertToLower.includes("kk switch")){
+       var find = "kk switch";
+       var edit = "kk with";
        var result1 = "";
         var text = convertToLower;
         var result = text.match(new RegExp(find + '\\s(\\w+)'))[1];
@@ -127,10 +127,32 @@ if(mostrecentword.indexOf("start")!==-1){
         replace = replace.substring(0, remove)
         console.log(replace);
         document.getElementById("question").innerHTML = replace;
+
      }else{
 
     document.getElementById("question").innerHTML = convertToString;
-  }
+  }  result;
+    result1;
 }
 
 }
+var keyword = "mountains";
+
+   $(document).ready(function(){
+
+       $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+       {
+           tags: keyword,
+           tagmode: "any",
+           format: "json"
+       },
+       function(data) {
+           var rnd = Math.floor(Math.random() * data.items.length);
+
+           var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+
+           $('body').css('background-image', "url('" + image_src + "')");
+
+       });
+
+   });
