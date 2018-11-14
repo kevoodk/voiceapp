@@ -4,7 +4,7 @@ html {
 
 body {
 width: 100%;
-height: auto;
+height: 100%;
 margin: 0;
 background: url(../img/bg.jpg) no-repeat center center fixed;
 -webkit-background-size: cover;
@@ -22,11 +22,105 @@ background-size: cover;
   height: 100%;
 }
 
-a {
+.slogan {
+  color: #00d3b3;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  float: left;
+  width: 65%;
+  height: 50%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 3%;
+}
+
+.slogan h1 {
+  font-size: 7vw;
+  margin: 0;
+}
+
+.divader{
+  width: 40%;
+  height: auto;
+  position: relative;
+    float: left;
+}
+
+.divader img{
+ width: 100%;
+ height: auto;
+}
+
+.robot {
+  position: absolute;
+  bottom: 100px;
+  right: 23%;
+  height: 45%;
+  width: 22.5%;
+  transform: translate3d( 0 , -5% , 0) ;
+    animation: levitate 2s ease-in-out infinite alternate ;
+}
+
+@keyframes levitate	{
+    100%	{
+    transform: translate3d( 0 , -2% , 0) ;
+		}
+}
+
+.robot img {
+  width: 100%;
+  height: auto;
+}
+
+.robot-shadow {
+  position: absolute;
+  bottom: 50px;
+  right: 23%;
+  height: 5%;
+  width: 22.5%;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  transform-origin: 50% 50%;
+}
+
+.robot-shadow { animation-name: robot-shadow;}
+
+@keyframes robot-shadow {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1) translate(-5px, -10px);}
+  100% {transform: scale(1);}
+}
+
+.robot-shadow img {
+  width: 100%;
+  height: auto;
+  margin-top: 7%;
+}
+
+.landing-nav {
+  width: 50%;
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+}
+
+.landing-nav ul li {
+  list-style: none;
+}
+
+.landing-nav ul li a {
   color: #0b0b49;
-  font-family: 'Raleway', sans-serif !important;
+  font-family: 'Raleway', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
+  padding-right: 40px;
+}
+
+.landing-nav ul li a:hover {
+  color: #00d3b3;
 }
 
 /*gallery slider */

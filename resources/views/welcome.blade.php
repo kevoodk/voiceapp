@@ -15,17 +15,34 @@
     </head>
     <body>
         <div class="container">
+          <div class="slogan">
+            <h1>
+              this is <span style="color: #0b0b49;">not</span><br>
+              just another<br>
+              website...
+            </h1>
+          </div>
+          <div class="divader">
+            <img src="../img/line.png">
+          </div>
+          <div class="robot">
+            <img src="../img/robot.png">
+          </div>
+          <div class="robot-shadow">
+            <img src="../img/shadow.png">
+          </div>
             @if (Route::has('login'))
-                <div class="bottom-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+                <div class="landing-nav">
+                    <ul>
+                      @auth
+                          <li><a href="{{ url('/home') }}">Home</a></li>
+                      @else
+                          <li><a href="{{ route('login') }}">Login</a></li>
+                          @if (Route::has('register'))
+                          <li><a href="{{ route('register') }}">Register</a></li>
+                          @endif
+                      @endauth
+                    </ul>
                 </div>
             @endif
         </div>
