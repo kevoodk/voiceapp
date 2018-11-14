@@ -111,17 +111,20 @@ if(mostrecentword.indexOf("start")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
      if(convertToLower.includes("kevin hello")){
-       var edit = "kevin hello";
-       var edit1 = "kevin with";
+       var find = "kevin hello";
+       var edit = "kevin with";
        var result1 = "";
         var text = convertToLower;
-        var result = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
-        if(text.includes(edit1)){
+        var result = text.match(new RegExp(find + '\\s(\\w+)'))[1];
+        console.log(result);
+        if(text.includes(edit)){
 
-        result1 = text.match(new RegExp(edit1 + '\\s(\\w+)'))[1];
+        result1 = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
     }
-        var replaceFirst = convertToString.replace("kevin hello", "");
+
         var replace = convertToString.replace(result, result1);
+        var remove = replace.indexOf('stop');
+        replace = replace.substring(0, remove)
         console.log(replace);
         document.getElementById("question").innerHTML = replace;
      }else{
