@@ -61,7 +61,7 @@ window.scrollBy(0, -100);
 else if(mostrecentword.indexOf("show")!==-1){
     document.body.style.opacity = "1";
 }
-else if(mostrecentword.indexOf("hide")!==-1){
+else if(mostrecentword.indexOf("disappear")!==-1){
     document.body.style.opacity = "0";
 
 }
