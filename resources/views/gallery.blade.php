@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="slider">
+<!-- <div class="slider">
  <ul id="addImage">
-    <!-- <li id="no-js-slider-1" class="slide">
+    <<li id="no-js-slider-1" class="slide">
       <img src="https://lh3.googleusercontent.com/-PcDDGh9C6Uk/UUoRYu8TmGI/AAAAAAAAADk/bVCVnUEott4/s1231/2.jpeg.jpg">
       <a id="back" class="prev" href="#no-js-slider-10">prev</a>
       <a id="next" class="next" href="#no-js-slider-2">next</a>
@@ -53,8 +53,11 @@
       <img src="https://lh6.googleusercontent.com/-UH8Tl-EG78c/UUoRYmvOWoI/AAAAAAAAADg/EIT1YomfqBo/s1231/1.jpeg.jpg">
       <a id="back" class="prev" href="#no-js-slider-9">prev</a>
       <a id="next" class="next" href="#no-js-slider-1">next</a>
-    </li> -->
+    </li>
   </ul>
+</div> -->
+<div id="big-image">
+  
 </div>
 <div id="images">
 

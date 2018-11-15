@@ -365,3 +365,19 @@ ul {
 li {
   float: left;
 }
+.images{
+min-height: 150px;
+max-height:150px;
+ width: 10%;
+ overflow: hidden;
+}
+.images img{
+  height: auto;
+ width: 100%;
+}
+#big-image{
+  width: 500px;
+  height:500px;
+  text-align: center;
+  margin:0 auto;
+}

@@ -69,20 +69,31 @@ else if(mostrecentword.indexOf("disappear")!==-1){
 }
 // next and previous gallery
 else if(mostrecentword.indexOf("next")!==-1){
+  next();
 
-  $(document).ready(function(){
-var numItems = $('.next').length;
-
-$('.next')[i].click();
-
-if(i > numItems){
-  i = 0;
-}else{
-i++;
 }
+function next(){
+  var prev = i - 1;
+var getClass = $('.images');
+var addBorder = $(getClass[i]).css("border", "1px solid black");
+var removeBorder = $(getClass[prev]).css("border", "none")
+var getSrc = $('.find-image');
+var findSrc = $(getSrc[i]).attr('src');
+console.log(i);
+i++;
+document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>"
 
-  });
-}else if(mostrecentword.indexOf("previous")!==-1){
+
+// console.log(getSrc);
+
+// if(i > numItems){
+//   i = 0;
+// }else{
+// i++;
+// }
+
+}
+if(mostrecentword.indexOf("previous")!==-1){
   $(document).ready(function(){
 var numItems = $('.prev').length;
 
@@ -118,7 +129,10 @@ var convertToLower = convertToString.toLowerCase();
       stringArray = [];
       for(i = 0; i < 9; i++){
       newImage();
+
     }
+    i = 0;
+
    console.log(keyword);
 }
 if(mostrecentword.indexOf("download")!==-1){
@@ -164,11 +178,6 @@ var keyword = "dog";
 
    function newImage(){
 
-
-
-
-     var prev = imageCount - 1;
-     var next = imageCount + 1;
        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
        {
            tags: keyword,
@@ -182,11 +191,12 @@ var keyword = "dog";
            var rnd = Math.floor(Math.random() * data.items.length);
 
            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
-           var html  = "<li  id=\"no-js-slider-"+ imageCount +"\" class=\"slide\"> <img src=\""+  image_src +"\"><a id=\"back\" class=\"prev\" href=\"#no-js-slider-"+ prev +"\"></a><a  id=\"next\" class=\"next\"  href=\"#no-js-slider-"+ next +"\"></a></li>";
-            document.getElementById("addImage").innerHTML += html;
-           var html1 = "<div class=\" images\" style=\"width:10%; float:left; \"><img style=\"width:100%;\" src=\""+  image_src +"\"></div>";
+           var html1 = "<div class=\" images\" style=\"width:10%; float:left; \"><img class=\"find-image\" style=\"width:100%;\" src=\""+  image_src +"\"></div>";
            document.getElementById("images").innerHTML += html1;
 
        });
        imageCount ++;
+       if(imageCount == 9){
+         console.log('hello world');
+       }
    }
