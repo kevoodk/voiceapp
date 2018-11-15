@@ -21,6 +21,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
@@ -39,38 +40,49 @@
         </li>
         @else
         <li class="nav-item">
-          <a href="/contacts">Contacts</a>
+          <a href="/about">About</a>
         </li>
         <li class="nav-item">
           <a href="/gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a href="/shop">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a href="/contacts">Contacts</a>
         </li>
       </ul>
       @endguest
     </div>
       @guest
       @else
-      <li class="username">
-      <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-          {{ Auth::user()->name }} <span class="caret"></span>
-      </a>
-
-      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{{ route('logout') }}"
-             onclick="event.preventDefault();
-                           document.getElementById('logout-form').submit();">
-              {{ __('Logout') }}
-          </a>
-
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+      <div class="username-logout">
+        <nav id="navigation" class="site-navigation" role="navigation">
+        <ul class="menu">
+          <li class="menu-item">
+            <a>
+              {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>
+            </a>
+            <ul class="dropdown">
+              <li class="menu-item sub-menu">
+                <a class="" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                {{ __('Logout') }}
+              </a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
-          </form>
+            </form>
+          </ul>
+          </li>
+        </ul>
+      </nav>
       </div>
-      </li>
       @endguest
         <main class="py-4">
             @yield('content')
         </main>
     </div>
-
 </body>
 </html>

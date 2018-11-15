@@ -1,26 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<div class="title">
+  <h1>
+    Welocome
+  </h1>
+</div>
+<div class="divader">
+  <img src="../img/line.png">
+</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-
-                  <h1 id="robot-voice"></h1>
-            </div>
-            <h1 style="text-align:center;"> Welcome <span id="user-name" style="font-weight:900;">  {{ Auth::user()->name }} </span><h1>
-        </div>
-    </div>
+<div class="robot">
+  <img src="../img/robot.png">
+</div>
+<div class="robot-shadow">
+  <img src="../img/shadow.png">
+</div>
+<div class="robot-text-block">
+  <p></p>
 </div>
 @endsection
