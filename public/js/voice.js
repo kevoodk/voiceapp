@@ -115,6 +115,7 @@ var convertToLower = convertToString.toLowerCase();
       var text = convertToLower;
       keyword = text.match(new RegExp(find + '\\s(\\w+)'))[1];
       stringArray = [];
+      newImage();
    console.log(keyword);
 }
 // Start writing
