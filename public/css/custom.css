@@ -23,10 +23,6 @@ background-size: cover;
 }
 
 .slogan {
-  color: #00d3b3;
-  font-family: 'Raleway', sans-serif;
-  text-transform: uppercase;
-  font-weight: 700;
   float: left;
   width: 65%;
   height: 50%;
@@ -35,21 +31,34 @@ background-size: cover;
   margin-left: 3%;
 }
 
-.slogan h1 {
+.title {
+  float: left;
+  width: 90%;
+  height: 50%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 3%;
+}
+
+h1 {
+  color: #00d3b3;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
   font-size: 7vw;
   margin: 0;
 }
 
 .divader{
-  width: 40%;
-  height: auto;
+  width: 100%;
+  height: 17px;
   position: relative;
     float: left;
 }
 
 .divader img{
- width: 100%;
- height: auto;
+ width: auto;
+ height: 100%;
 }
 
 .robot {
@@ -121,6 +130,10 @@ background-size: cover;
   list-style: none;
 }
 
+li {
+  list-style: none;
+}
+
 .landing-nav ul li a {
   color: #0b0b49;
   font-family: 'Raleway', sans-serif;
@@ -131,6 +144,14 @@ background-size: cover;
 
 .landing-nav ul li a:hover {
   color: #00d3b3;
+}
+
+/*auth*/
+
+.card {
+  float: left;
+  margin-top: 1.5%;
+  margin-left: 3%;
 }
 
 /*gallery slider */
