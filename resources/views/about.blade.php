@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.app-second')
 
 @section('content')
 <div class="title">
@@ -15,8 +15,5 @@
 </div>
 <div class="robot-shadow">
   <img src="../img/shadow.png">
-</div>
-<div class="robot-text-block">
-  <p></p>
 </div>
 @endsection

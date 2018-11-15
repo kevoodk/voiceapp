@@ -1,0 +1,363 @@
+
+
+html {
+  height: 100%;
+}
+
+body {
+width: 100%;
+height: 100%;
+margin: 0;
+background:#efefef;
+-webkit-animation: fadein 1.5s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 1.5s; /* Firefox < 16 */
+        -ms-animation: fadein 1.5s; /* Internet Explorer */
+         -o-animation: fadein 1.5s; /* Opera < 12.1 */
+            animation: fadein 1.5s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#defaultCanvas {
+  display: none;
+}
+
+.container2 {
+  width: 100%;
+  height: 100%;
+}
+
+.slogan {
+  float: left;
+  width: 65%;
+  height: 50%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 3%;
+}
+
+.title {
+  float: left;
+  width: 90%;
+  height: 50%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
+  margin-left: 3%;
+}
+
+h1 {
+  color: #00d3b3;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 7vw;
+  margin: 0;
+}
+
+.divader{
+  width: 100%;
+  height: 17px;
+  position: relative;
+    float: left;
+}
+
+.divader img{
+ width: auto;
+ height: 100%;
+}
+
+.robot {
+  position: absolute;
+  bottom: 100px;
+  right: 23%;
+  height: 45%;
+  width: 22.5%;
+  transform: translate3d( 0 , -5% , 0) ;
+    animation: levitate 2s ease-in-out infinite alternate ;
+}
+
+@keyframes levitate	{
+    100%	{
+    transform: translate3d( 0 , -2% , 0) ;
+		}
+}
+
+.robot img {
+  width: 100%;
+  height: auto;
+}
+
+.robot-shadow {
+  position: absolute;
+  bottom: 50px;
+  right: 23%;
+  height: 5%;
+  width: 22.5%;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+  transform-origin: 50% 50%;
+}
+
+.robot-shadow { animation-name: robot-shadow;}
+
+@keyframes robot-shadow {
+  0% {transform: scale(1);}
+  50% {transform: scale(1.1) translate(-5px, -10px);}
+  100% {transform: scale(1);}
+}
+
+.robot-shadow img {
+  width: 100%;
+  height: auto;
+  margin-top: 7%;
+}
+
+.robot-text-block {
+  position: absolute;
+  bottom: 50px;
+  right: 3%;
+  height: 50%;
+  width: 15%;
+  background: rgba(255,255,255, 0.3);
+  border-radius: 20px;
+}
+
+.landing-nav {
+  width: 50%;
+  position: absolute;
+  bottom: 50px;
+  left: 30px;
+}
+
+.landing-nav ul li {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+.landing-nav ul li a {
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-right: 40px;
+}
+
+.landing-nav ul li a:hover {
+  color: #00d3b3;
+}
+
+/*auth*/
+
+.card {
+  float: left;
+  margin-top: 3%;
+  margin-left: 3%;
+  width: 20%;
+}
+
+label {
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+}
+
+input {
+  background: none;
+  border: 1px solid #0b0b49;
+  border-radius: 10px;
+  width: 100%;
+  height: 30px;
+  margin: 8px 0 15px 0;
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+button {
+  height: 40px;
+  float: right;
+  background: #00d3b3;
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-transform: uppercase;
+  font-size: 17px;
+  padding: 0 15px 0 15px;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: none;
+  color: #00d3b3;
+  border: 1px solid #00d3b3;
+}
+
+/*welcome page*/
+
+.username-logout {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+}
+
+.site-navigation {
+	display: block;
+	font-size: 16px;
+  font-weight: 700;
+    font-family: 'Raleway', sans-serif;
+}
+
+.site-navigation ul {
+  background: none;
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+}
+
+.site-navigation li {
+	color: #0b0b49;
+  background: none;
+	display: block;
+	float: left;
+	padding: 12px 0 12px 12px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.site-navigation li a {
+  color: #0b0b49;
+  text-decoration: none;
+  display: block;
+}
+
+.site-navigation li:hover {
+	@include transition(background, 0.2s);
+	background: none;
+	cursor: pointer;
+}
+
+.site-navigation ul li ul {
+	background: none;
+	visibility: hidden;
+	float: left;
+	position: absolute;
+  transition: visibility 0.65s ease-in;
+  margin-top:10px;
+	left: 0;
+	z-index: 999;
+  border: 1px solid #0b0b49;
+  border-radius: 10px;
+}
+
+.site-navigation ul li ul:hover {
+  border-radius: 10px;
+  background: #fff;
+}
+
+.site-navigation ul li:hover > ul,
+.site-navigation ul li ul:hover {
+   visibility: visible;
+}
+
+.site-navigation ul li ul li {
+  font-weight: normal;
+	clear: both;
+	padding: 10px;
+  width: 100%;
+}
+
+.site-navigation ul li ul li:hover {
+	background: none;
+}
+
+/*gallery slider */
+@-webkit-keyframes TMNT {
+	0%  { left: 0px; }
+	100% { left: -1200px; }
+}
+a.prev,a.next {
+	height:91px;
+	position:absolute;
+	width:43px;
+	top:50%;
+	margin-top:-30px;
+	opacity:0.6;
+	text-indent:-99999px;
+	cursor:pointer;
+	-webkit-transition:opacity 200ms ease-out;
+}
+a.prev:hover,a.next:hover {
+	opacity:1;
+}
+.prev {
+	left:0;
+	background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -200px 25px;
+}
+.next {
+	right:0;
+	background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
+}
+
+#next{
+
+}
+
+.slider {
+	height:74vh;
+	position: relative;
+}
+.slide {
+	position:absolute;
+	height:100%;
+	width:100%;
+}
+.slider .slide:target {
+	z-index: 100;
+}
+img {
+  height: 100%;
+	width:auto;
+	left:0;
+}
+
+ul {
+  text-decoration: none;
+}
+li {
+  float: left;
+}
