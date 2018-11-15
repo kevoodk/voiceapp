@@ -14,7 +14,7 @@
         <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
+        <div class="container2">
           <div class="slogan">
             <h1>
               this is <span style="color: #0b0b49;">not</span><br>
@@ -30,6 +30,9 @@
           </div>
           <div class="robot-shadow">
             <img src="../img/shadow.png">
+          </div>
+          <div class="robot-text-block">
+            <p></p>
           </div>
             @if (Route::has('login'))
                 <div class="landing-nav">
