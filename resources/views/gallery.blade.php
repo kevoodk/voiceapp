@@ -56,5 +56,8 @@
     </li> -->
   </ul>
 </div>
+<div id="images">
+
+</div>
 
 @endsection

@@ -4,6 +4,7 @@ myRec.interimResults = false; // allow partial recognition (faster, less accurat
 var myVoice = new p5.Speech();
 let stringArray = [];
 var i = 0;
+var imageCount = 0;
 function setup(){
 myRec.start();
  // start engine
@@ -68,7 +69,7 @@ else if(mostrecentword.indexOf("disappear")!==-1){
 }
 // next and previous gallery
 else if(mostrecentword.indexOf("next")!==-1){
-  newImage();
+
   $(document).ready(function(){
 var numItems = $('.next').length;
 
@@ -115,8 +116,16 @@ var convertToLower = convertToString.toLowerCase();
       var text = convertToLower;
       keyword = text.match(new RegExp(find + '\\s(\\w+)'))[1];
       stringArray = [];
+      for(i = 0; i < 9; i++){
       newImage();
+    }
    console.log(keyword);
+}
+if(mostrecentword.indexOf("download")!==-1){
+      download();
+}
+function download(){
+    $
 }
 // Start writing
 if(mostrecentword.indexOf("start")!==-1){
@@ -155,22 +164,29 @@ var keyword = "dog";
 
    function newImage(){
 
+
+
+
+     var prev = imageCount - 1;
+     var next = imageCount + 1;
        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
        {
            tags: keyword,
            tagmode: "any",
            format: "json"
        },
+
+
+
        function (data) {
            var rnd = Math.floor(Math.random() * data.items.length);
 
            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
-           var html = "<li class=\"slide\"> <img src=\""+  image_src +"\"><a  class=\"prev\"></a><a  class=\"next\"></a></li>";
-           document.getElementById("addImage").innerHTML = html;
-
-           console.log(html);
-           // $('body').css('background-image', "url('" + image_src + "')");
+           var html  = "<li  id=\"no-js-slider-"+ imageCount +"\" class=\"slide\"> <img src=\""+  image_src +"\"><a id=\"back\" class=\"prev\" href=\"#no-js-slider-"+ prev +"\"></a><a  id=\"next\" class=\"next\"  href=\"#no-js-slider-"+ next +"\"></a></li>";
+            document.getElementById("addImage").innerHTML += html;
+           var html1 = "<div class=\" images\" style=\"width:10%; float:left; \"><img style=\"width:100%;\" src=\""+  image_src +"\"></div>";
+           document.getElementById("images").innerHTML += html1;
 
        });
-
+       imageCount ++;
    }
