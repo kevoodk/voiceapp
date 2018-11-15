@@ -3,7 +3,7 @@
 @section('content')
 <div class="title">
   <h1>
-    Welocome
+    About
   </h1>
 </div>
 <div class="divader">
