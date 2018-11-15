@@ -104,6 +104,19 @@ else if(mostrecentword.indexOf("hello")!==-1){
       myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
       document.getElementById("robot-voice").innerHTML = talk;
 }
+if(mostrecentword.indexOf("search")!==-1){
+  search();
+}
+function search(){
+var convertToString = stringArray.toString();
+var convertToLower = convertToString.toLowerCase();
+
+      var find = "find";
+      var text = convertToLower;
+      keyword = text.match(new RegExp(find + '\\s(\\w+)'))[1];
+      stringArray = [];
+   console.log(keyword);
+}
 // Start writing
 if(mostrecentword.indexOf("start")!==-1){
       myVoice.speak("Ok, tell me what you want me to write, say stop when you are done");
@@ -137,7 +150,7 @@ if(mostrecentword.indexOf("start")!==-1){
 }
 
 }
-var keyword = "mountains";
+var keyword = "dog";
 
    function newImage(){
 
