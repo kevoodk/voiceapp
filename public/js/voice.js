@@ -3,7 +3,7 @@ myRec.continuous = true; // do continuous recognition
 myRec.interimResults = false; // allow partial recognition (faster, less accurate) // new P5.Speech object
 var myVoice = new p5.Speech();
 let stringArray = [];
-var i = 0;
+var i = 1;
 var imageCount = 0;
 function setup(){
 myRec.start();
@@ -73,42 +73,40 @@ else if(mostrecentword.indexOf("next")!==-1){
 
 }
 function next(){
+  i++;
   var prev = i - 1;
 var getClass = $('.images');
 var addBorder = $(getClass[i]).css("border", "1px solid black");
-var removeBorder = $(getClass[prev]).css("border", "none")
+var removeBorder = $(getClass[prev]).css("border", "none");
 var getSrc = $('.find-image');
 var findSrc = $(getSrc[i]).attr('src');
 console.log(i);
-i++;
+console.log(getClass.length);
+if(i >= getClass.length - 1){
+
+  newImage();
+}
+
 document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>"
-
-
-// console.log(getSrc);
-
-// if(i > numItems){
-//   i = 0;
-// }else{
-// i++;
-// }
-
 }
+
 if(mostrecentword.indexOf("previous")!==-1){
-  $(document).ready(function(){
-var numItems = $('.prev').length;
-
-$('.prev')[i].click();
-
-if(i > numItems){
-  i = 0;
-}else{
-i--;
+  prev();
 }
+function prev(){
+i--;
+  var next = i + 1;
+var getClass = $('.images');
+var addBorder = $(getClass[i]).css("border", "1px solid black");
+var removeBorder = $(getClass[next]).css("border", "none");
+var getSrc = $('.find-image');
+var findSrc = $(getSrc[i]).attr('src');
+console.log(i);
 
-  });
+document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>"
 }
 // Show commands
-else if(mostrecentword.indexOf("hello")!==-1){
+if(mostrecentword.indexOf("hello")!==-1){
   var getUserName = document.getElementById("user-name").innerHTML;
   var userToString = getUserName.toString();
 
@@ -135,12 +133,7 @@ var convertToLower = convertToString.toLowerCase();
 
    console.log(keyword);
 }
-if(mostrecentword.indexOf("download")!==-1){
-      download();
-}
-function download(){
-    $
-}
+
 // Start writing
 if(mostrecentword.indexOf("start")!==-1){
       myVoice.speak("Ok, tell me what you want me to write, say stop when you are done");
@@ -196,7 +189,5 @@ var keyword = "dog";
 
        });
        imageCount ++;
-       if(imageCount == 9){
-         console.log('hello world');
-       }
+
    }
