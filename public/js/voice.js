@@ -10,7 +10,7 @@ myRec.start();
  // start engine
 }
 $('defaultCanvas').remove();
-var menuArray = ["login", "register", "home", "gallery", "contacts", "about"];
+var menuArray = ["login", "register", "home", "gallery", "contacts", "about", "games"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 
@@ -76,7 +76,7 @@ function next(){
   i++;
   var prev = i - 1;
 var getClass = $('.images');
-var addBorder = $(getClass[i]).css("border", "1px solid black");
+var addBorder = $(getClass[i]).css("border", "5px solid black");
 var removeBorder = $(getClass[prev]).css("border", "none");
 var getSrc = $('.find-image');
 var findSrc = $(getSrc[i]).attr('src');
@@ -97,7 +97,7 @@ function prev(){
 i--;
   var next = i + 1;
 var getClass = $('.images');
-var addBorder = $(getClass[i]).css("border", "1px solid black");
+var addBorder = $(getClass[i]).css("border", "5px solid black");
 var removeBorder = $(getClass[next]).css("border", "none");
 var getSrc = $('.find-image');
 var findSrc = $(getSrc[i]).attr('src');
