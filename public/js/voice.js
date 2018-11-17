@@ -9,8 +9,8 @@ function setup(){
 myRec.start();
  // start engine
 }
-$('defaultCanvas').remove();
-var menuArray = ["login", "register", "home", "gallery", "contacts", "about", "games"];
+
+var menuArray = ["login", "register", "home", "gallery", "contacts", "about"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 
