@@ -1,254 +1,172 @@
-const canvas = document.getElementById('tetris');
-const context = canvas.getContext('2d');
+var myRec = new p5.SpeechRec('en-US', parseResult);
 
+   // new P5.SpeechRec object
+  myRec.continuous = true; // do continuous recognition
+  myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+  function setup(){
+    	myRec.start(); // start engine
+  }
 
+	//Canvas stuff
+	var canvas = $("#canvas")[0];
+	var ctx = canvas.getContext("2d");
+	var w = $("#canvas").width();
+	var h = $("#canvas").height();
 
-context.scale(20, 20);
+	//Lets save the cell width in a variable for easy control
+	var cw = 10;
+	var d;
+	var food;
+	var score;
+   var level;
 
-function arenaSweep() {
-    let rowCount = 1;
-    outer: for (let y = arena.length -1; y > 0; --y) {
-        for (let x = 0; x < arena[y].length; ++x) {
-            if (arena[y][x] === 0) {
-                continue outer;
-            }
-        }
+	//Lets create the snake now
+	var snake_array; //an array of cells to make up the snake
 
-        const row = arena.splice(y, 1)[0].fill(0);
-        arena.unshift(row);
-        ++y;
+	function init()
+	{
+		d = "right"; //default direction
+		create_snake();
+		create_food(); //Now we can see the food particle
+		//finally lets display the score
+		score = 0;
+     level = 1;
 
-        player.score += rowCount * 10;
-        rowCount *= 2;
-    }
-}
+		//Lets move the snake now using a timer which will trigger the paint function
+		//every 60ms
+		if(typeof game_loop != "undefined") clearInterval(game_loop);
+		game_loop = setInterval(paint, 100);
+	}
+	init();
 
-function collide(arena, player) {
-    const m = player.matrix;
-    const o = player.pos;
-    for (let y = 0; y < m.length; ++y) {
-        for (let x = 0; x < m[y].length; ++x) {
-            if (m[y][x] !== 0 &&
-               (arena[y + o.y] &&
-                arena[y + o.y][x + o.x]) !== 0) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
+	function create_snake()
+	{
+		var length = 5; //Length of the snake
+		snake_array = []; //Empty array to start with
+		for(var i = length-1; i>=0; i--)
+		{
+			//This will create a horizontal snake starting from the top left
+			snake_array.push({x: i, y:0});
+		}
+	}
 
-function createMatrix(w, h) {
-    const matrix = [];
-    while (h--) {
-        matrix.push(new Array(w).fill(0));
-    }
-    return matrix;
-}
+	//Lets create the food now
+	function create_food()
+	{
+		food = {
+			x: Math.round(Math.random()*(w-cw)/cw),
+			y: Math.round(Math.random()*(h-cw)/cw),
+		};
+		//This will create a cell with x/y between 0-44
+		//Because there are 45(450/10) positions accross the rows and columns
+	}
 
-function createPiece(type)
-{
-    if (type === 'I') {
-        return [
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-            [0, 1, 0, 0],
-        ];
-    } else if (type === 'L') {
-        return [
-            [0, 2, 0],
-            [0, 2, 0],
-            [0, 2, 2],
-        ];
-    } else if (type === 'J') {
-        return [
-            [0, 3, 0],
-            [0, 3, 0],
-            [3, 3, 0],
-        ];
-    } else if (type === 'O') {
-        return [
-            [4, 4],
-            [4, 4],
-        ];
-    } else if (type === 'Z') {
-        return [
-            [5, 5, 0],
-            [0, 5, 5],
-            [0, 0, 0],
-        ];
-    } else if (type === 'S') {
-        return [
-            [0, 6, 6],
-            [6, 6, 0],
-            [0, 0, 0],
-        ];
-    } else if (type === 'T') {
-        return [
-            [0, 7, 0],
-            [7, 7, 7],
-            [0, 0, 0],
-        ];
-    }
-}
+	//Lets paint the snake now
+	function paint()
+	{
+		//To avoid the snake trail we need to paint the BG on every frame
+		//Lets paint the canvas now
+		ctx.fillStyle = "white";
+		ctx.fillRect(0, 0, w, h);
+		ctx.strokeStyle = "black";
+		ctx.strokeRect(0, 0, w, h);
 
-function drawMatrix(matrix, offset) {
-    matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                context.fillStyle = colors[value];
-                context.fillRect(x + offset.x,
-                                 y + offset.y,
-                                 1, 1);
-            }
-        });
-    });
-}
+		//The movement code for the snake to come here.
+		//The logic is simple
+		//Pop out the tail cell and place it infront of the head cell
+		var nx = snake_array[0].x;
+		var ny = snake_array[0].y;
+		//These were the position of the head cell.
+		//We will increment it to get the new head position
+		//Lets add proper direction based movement now
+		if(d == "right") nx++;
+		else if(d == "left") nx--;
+		else if(d == "up") ny--;
+		else if(d == "down") ny++;
 
-function draw() {
-    context.fillStyle = '#000';
-    context.fillRect(0, 0, canvas.width, canvas.height);
+		//Lets add the game over clauses now
+		//This will restart the game if the snake hits the wall
+		//Lets add the code for body collision
+		//Now if the head of the snake bumps into its body, the game will restart
+		if(nx == -1 || nx == w/cw || ny == -1 || ny == h/cw || check_collision(nx, ny, snake_array))
+		{
+			//restart game
+			init();
+			//Lets organize the code a bit now.
+			return;
+		}
 
-    drawMatrix(arena, {x: 0, y: 0});
-    drawMatrix(player.matrix, player.pos);
-}
+		//Lets write the code to make the snake eat the food
+		//The logic is simple
+		//If the new head position matches with that of the food,
+		//Create a new head instead of moving the tail
+		if(nx == food.x && ny == food.y)
+		{
+			var tail = {x: nx, y: ny};
+			score++;
 
-function merge(arena, player) {
-    player.matrix.forEach((row, y) => {
-        row.forEach((value, x) => {
-            if (value !== 0) {
-                arena[y + player.pos.y][x + player.pos.x] = value;
-            }
-        });
-    });
-}
+			//Create new food
+			create_food();
+		}
+		else
+		{
+			var tail = snake_array.pop(); //pops out the last cell
+			tail.x = nx; tail.y = ny;
+		}
+		//The snake can now eat the food.
 
-function rotate(matrix, dir) {
-    for (let y = 0; y < matrix.length; ++y) {
-        for (let x = 0; x < y; ++x) {
-            [
-                matrix[x][y],
-                matrix[y][x],
-            ] = [
-                matrix[y][x],
-                matrix[x][y],
-            ];
-        }
-    }
+		snake_array.unshift(tail); //puts back the tail as the first cell
 
-    if (dir > 0) {
-        matrix.forEach(row => row.reverse());
-    } else {
-        matrix.reverse();
-    }
-}
+		for(var i = 0; i < snake_array.length; i++)
+		{
+			var c = snake_array[i];
+			//Lets paint 10px wide cells
+			paint_cell(c.x, c.y, "blue");
+		}
 
-function playerDrop() {
-    player.pos.y++;
-    if (collide(arena, player)) {
-        player.pos.y--;
-        merge(arena, player);
-        playerReset();
-        arenaSweep();
-        updateScore();
-    }
-    dropCounter = 0;
-}
+		//Lets paint the food
+		paint_cell(food.x, food.y, "red");
+		//Lets paint the score
+		var score_text = "Score: " + score;
+     var level_text = "Level: " + level;
+		ctx.fillText(score_text, 5, h-5);
+     ctx.fillText(level_text, 60, h-5);
+	}
 
-function playerMove(offset) {
-    player.pos.x += offset;
-    if (collide(arena, player)) {
-        player.pos.x -= offset;
-    }
-}
+	//Lets first create a generic function to paint cells
+	function paint_cell(x, y, color)
+	{
+		ctx.fillStyle = color;
+		ctx.fillRect(x*cw, y*cw, cw, cw);
+		ctx.strokeStyle = "white";
+		ctx.strokeRect(x*cw, y*cw, cw, cw);
+	}
 
-function playerReset() {
-    const pieces = 'TJLOSZI';
-    player.matrix = createPiece(pieces[pieces.length * Math.random() | 0]);
-    player.pos.y = 0;
-    player.pos.x = (arena[0].length / 2 | 0) -
-                   (player.matrix[0].length / 2 | 0);
-    if (collide(arena, player)) {
-        arena.forEach(row => row.fill(0));
-        player.score = 0;
-        updateScore();
-    }
-}
+	function check_collision(x, y, array)
+	{
+		//This function will check if the provided x/y coordinates exist
+		//in an array of cells or not
+		for(var i = 0; i < array.length; i++)
+		{
+			if(array[i].x == x && array[i].y == y)
+			 return true;
+		}
+		return false;
+	}
 
-function playerRotate(dir) {
-    const pos = player.pos.x;
-    let offset = 1;
-    rotate(player.matrix, dir);
-    while (collide(arena, player)) {
-        player.pos.x += offset;
-        offset = -(offset + (offset > 0 ? 1 : -1));
-        if (offset > player.matrix[0].length) {
-            rotate(player.matrix, -dir);
-            player.pos.x = pos;
-            return;
-        }
-    }
-}
-
-let dropCounter = 0;
-let dropInterval = 1000;
-
-let lastTime = 0;
-function update(time = 0) {
-    const deltaTime = time - lastTime;
-
-    dropCounter += deltaTime;
-    if (dropCounter > dropInterval) {
-        playerDrop();
-    }
-
-    lastTime = time;
-
-    draw();
-    requestAnimationFrame(update);
-}
-
-function updateScore() {
-    document.getElementById('score').innerText = player.score;
-}
-function controlVoice(){
-// recognition system will often append words into phrases.
-
-var mostrecentword = myRec.resultString.split(' ').pop();
-
-    if (mostrecentword.indexOf("left")!==-1) {
-        playerMove(-1);
-    } else if (mostrecentword.indexOf("right")!==-1) {
-        playerMove(1);
-    } else if (mostrecentword.indexOf("down")!==-1) {
-        playerDrop();
-    } else if (mostrecentword.indexOf("hello")!==-1) {
-        playerRotate(-1);
-    } else if (mostrecentword.indexOf("rotate")!==-1) {
-        playerRotate(1);
-    }
-}
-
-const colors = [
-    null,
-    '#FF0D72',
-    '#0DC2FF',
-    '#0DFF72',
-    '#F538FF',
-    '#FF8E0D',
-    '#FFE138',
-    '#3877FF',
-];
-
-const arena = createMatrix(12, 20);
-
-const player = {
-    pos: {x: 0, y: 0},
-    matrix: null,
-    score: 0,
-};
-
-playerReset();
-updateScore();
-update();
+	//Lets add the keyboard controls now
+	function parseResult(){
+		 var key = myRec.resultString.split(' ').pop();
+     console.log(key);
+		//We will add another clause to prevent reverse gear
+		if(key.indexOf("left")!==-1 && d != "right") d = "left";
+		else if(key.indexOf("up")!==-1 && d != "down") d = "up";
+		else if(key.indexOf("right")!==-1 && d != "left") d = "right";
+		else if(key.indexOf("down")!==-1 && d != "up") d = "down";
+		//The snake is now keyboard controllable
+	}
+  // function parseResult(){
+  //   var mostrecentword = myRec.resultString.split(' ').pop();
+  //   key(mostrecentword);
+  //
+  // }
