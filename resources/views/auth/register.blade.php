@@ -63,9 +63,6 @@
 <div class="robot">
   <img src="../img/robot.png">
 </div>
-<div class="robot-shadow">
-  <img src="../img/shadow.png">
-</div>
 <div class="robot-text-block">
   <p></p>
 </div>

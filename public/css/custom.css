@@ -99,7 +99,7 @@ h1 {
 
 .robot {
   position: absolute;
-  bottom: 100px;
+  bottom: 8%;
   right: 23%;
   height: 45%;
   width: 22.5%;
@@ -118,7 +118,7 @@ h1 {
   height: auto;
 }
 
-.robot-shadow {
+/*.robot-shadow {
   position: absolute;
   bottom: 50px;
   right: 23%;
@@ -143,7 +143,7 @@ h1 {
   width: 100%;
   height: auto;
   margin-top: 7%;
-}
+}*/
 
 .robot-text-block {
   position: absolute;
@@ -156,14 +156,18 @@ h1 {
 }
 
 .landing-nav {
-  width: 50%;
-  position: absolute;
-  bottom: 50px;
-  left: 30px;
+  width: 30%;
+  position: fixed;
+  background: #efefef;
+  top: 90%;
+  padding-left: 30px;
+  height: 92px;
+  z-index: 1000;
 }
 
 .landing-nav ul li {
   list-style: none;
+  margin-top: 10px;
 }
 
 li {
@@ -176,10 +180,11 @@ li {
   text-decoration: none;
   text-transform: uppercase;
   padding-right: 40px;
+  font-weight: 700;
 }
 
 .landing-nav ul li a:hover {
-  color: #00d3b3;
+  color: #00D3B3;
 }
 
 /*auth*/

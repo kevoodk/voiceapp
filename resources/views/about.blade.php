@@ -10,10 +10,46 @@
   <img src="../img/line.png">
 </div>
 
+<div class="paragraph">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+    enim ad minim veniam, quis nostrud
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud </p><br>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+        enim ad minim veniam, quis nostrud</p>
+</div>
+
 <div class="robot">
   <img src="../img/robot.png">
 </div>
-<div class="robot-shadow">
-  <img src="../img/shadow.png">
+<div class="back-stripe">
+  <img src="../img/back-stripe.png">
+</div>
+
+<div class="section-two">
+  <div class="p5">
+    <img src="../img/p5.png">
+  </div>
+  <div class="back-stripe-l">
+    <img src="../img/back-stripe-l.png">
+  </div>
+
+  <div class="paragraph-l">
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud
+      Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+        enim ad minim veniam, quis nostrud </p><br>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+          nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+          enim ad minim veniam, quis nostrud</p>
+  </div>
+
+  <div class="footer">
+  </div>
 </div>
 @endsection
