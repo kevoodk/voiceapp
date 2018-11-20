@@ -4,6 +4,7 @@ myRec.interimResults = false; // allow partial recognition (faster, less accurat
 var myVoice = new p5.Speech();
 let stringArray = [];
 var i = 1;
+var readArray = [];
 var imageCount = 0;
 function setup(){
 myRec.start();
@@ -74,6 +75,13 @@ else if(mostrecentword.indexOf("disappear")!==-1){
 else if(mostrecentword.indexOf("next")!==-1){
   next();
 
+}
+else if(mostrecentword.indexOf("read")!==-1){
+var arrOfPtags = document.getElementsByTagName("p");
+for (var i = 0;i < arrOfPtags.length; i++){
+    readArray.push(arrOfPtags[i].textContent);
+}
+myVoice.speak(readArray.toString());
 }
 function next(){
   i++;
