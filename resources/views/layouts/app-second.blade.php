@@ -51,6 +51,9 @@
         <li class="nav-item">
           <a href="/contacts">Contacts</a>
         </li>
+        <li class="nav-item">
+          <a href="/games">Games</a>
+        </li>
       </ul>
       @endguest
     </div>
