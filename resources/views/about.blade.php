@@ -13,7 +13,7 @@
 <div class="robot">
   <img src="../img/robot.png">
 </div>
-<div class="robot-shadow">
-  <img src="../img/shadow.png">
+<div class="back-stripe">
+  <img src="../img/back-stripe.png">
 </div>
 @endsection

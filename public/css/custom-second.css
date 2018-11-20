@@ -94,9 +94,10 @@ h1 {
 }
 
 .robot {
+  z-index: 999;
   position: absolute;
-  bottom: 100px;
-  right: 23%;
+  bottom: 18%;
+  right: 18%;
   height: 45%;
   width: 22.5%;
   transform: translate3d( 0 , -5% , 0) ;
@@ -113,11 +114,11 @@ h1 {
   width: 100%;
   height: auto;
 }
-
+/*
 .robot-shadow {
   position: absolute;
-  bottom: 50px;
-  right: 23%;
+  bottom: 15%;
+  right: 18%;
   height: 5%;
   width: 22.5%;
   animation-duration: 5s;
@@ -139,6 +140,20 @@ h1 {
   width: 100%;
   height: auto;
   margin-top: 7%;
+}*/
+
+.back-stripe {
+  position: absolute;
+  top: 45%;
+  bottom: 50%;
+  right: 0;
+  height: 20%;
+  width: 50%;
+}
+
+.back-stripe img {
+  width: 100%;
+  height: auto;
 }
 
 .robot-text-block {
