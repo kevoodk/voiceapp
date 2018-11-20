@@ -152,15 +152,15 @@ if(mostrecentword.indexOf("start")!==-1){
 }else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
-     if(convertToLower.includes("kk hello")){
+     if(convertToLower.includes("bob hello")){
        var line = "new line";
-       var find = "kk hello";
+       var find = "bob hello";
        var result = convertToString.replace(new RegExp(find + '\\s(\\w+)'), "$1" + "\n");
 
      }
-     if(convertToLower.includes("kk switch")){
-       var find = "kk switch";
-       var edit = "kk with";
+     if(convertToLower.includes("bob switch")){
+       var find = "bob switch";
+       var edit = "bob with";
 
        var result1 = "";
         var text = convertToLower;
@@ -202,7 +202,7 @@ var keyword = "dog";
            var rnd = Math.floor(Math.random() * data.items.length);
 
            var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
-           var html1 = "<div class=\" images\" style=\"width:10%; float:left; \"><img class=\"find-image\" style=\"width:100%;\" src=\""+  image_src +"\"></div>";
+           var html1 = "<div class=\" images\"><img class=\"find-image\" style=\"width:100%;\" src=\""+  image_src +"\"></div>";
            document.getElementById("images").innerHTML += html1;
 
        });
