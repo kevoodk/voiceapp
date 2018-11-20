@@ -97,6 +97,24 @@ h1 {
  height: 100%;
 }
 
+.paragraph {
+  float: left;
+  width: 40%;
+  height: 27%;
+  position: absolute;
+  top: 45%;
+  left: 0;
+}
+
+.paragraph p {
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-left: 7%;
+  padding-right: 10%;
+}
+
 .robot {
   position: absolute;
   bottom: 8%;
@@ -379,10 +397,4 @@ max-height:150px;
 .images img{
   height: auto;
  width: 100%;
-}
-#big-image{
-  width: 500px;
-  height:500px;
-  text-align: center;
-  margin:0 auto;
 }

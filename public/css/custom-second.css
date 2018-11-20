@@ -1,7 +1,7 @@
 
 
 html {
-  height: 200%;
+  height: auto;
 }
 
 body {
@@ -393,59 +393,28 @@ button:hover {
 	background: none;
 }
 
-/*gallery slider */
-@-webkit-keyframes TMNT {
-	0%  { left: 0px; }
-	100% { left: -1200px; }
-}
-a.prev,a.next {
-	height:91px;
-	position:absolute;
-	width:43px;
-	top:50%;
-	margin-top:-30px;
-	opacity:0.6;
-	text-indent:-99999px;
-	cursor:pointer;
-	-webkit-transition:opacity 200ms ease-out;
-}
-a.prev:hover,a.next:hover {
-	opacity:1;
-}
-.prev {
-	left:0;
-	background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -200px 25px;
-}
-.next {
-	right:0;
-	background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
-}
-
-#next{
-
-}
-
-.slider {
-	height:74vh;
-	position: relative;
-}
-.slide {
-	position:absolute;
-	height:100%;
-	width:100%;
-}
-.slider .slide:target {
-	z-index: 100;
-}
-img {
-  height: 100%;
-	width:auto;
-	left:0;
-}
-
 ul {
   text-decoration: none;
 }
 li {
   float: left;
+}
+
+/*gallery*/
+
+#big-image{
+  width: 800px;
+  height:500px;
+  text-align: center;
+  margin:0 auto;
+  background: #666;
+  float: left;
+  overflow: hidden;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+#big-image img{
+  width: auto;
+  height:100%;
 }

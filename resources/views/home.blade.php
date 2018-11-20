@@ -10,6 +10,18 @@
   <img src="../img/line.png">
 </div>
 
+<div class="paragraph">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+    enim ad minim veniam, quis nostrud
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud </p><br>
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+        enim ad minim veniam, quis nostrud</p>
+</div>
+
 <div class="robot">
   <img src="../img/robot.png">
 </div>
