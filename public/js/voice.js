@@ -15,6 +15,8 @@ var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 
 function parseResult(){
+mostrecentstring = myRec.resultString;
+$('.robot-text-block').text(mostrecentstring);
 // recognition system will often append words into phrases.
 // so hack here is to only use the last word:
 var mostrecentword = myRec.resultString.split(' ').pop();
@@ -142,12 +144,11 @@ if(mostrecentword.indexOf("start")!==-1){
 }else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
-     if(convertToLower.includes("kk find")){
+     if(convertToLower.includes("kk hello")){
        var line = "new line";
-       var find = "kk find";
-       var result = convertToLower.match(new RegExp(find + '\\s(\\w+)'))[1];
-       console.log('New line');
-       var linebreak = convertToString.replace(result, result + "\");
+       var find = "kk hello";
+       var result = convertToString.replace(new RegExp(find + '\\s(\\w+)'), "$1" + "\n");
+
      }
      if(convertToLower.includes("kk switch")){
        var find = "kk switch";
