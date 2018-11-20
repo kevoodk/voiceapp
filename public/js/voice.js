@@ -87,8 +87,8 @@ function next(){
   i++;
   var prev = i - 1;
 var getClass = $('.images');
-var addBorder = $(getClass[i]).css("border", "5px solid black");
-var removeBorder = $(getClass[prev]).css("border", "none");
+var addBorder = $(getClass[i]).addClass("selected");
+var removeBorder = $(getClass[prev]).removeClass("selected");
 var getSrc = $('.find-image');
 var findSrc = $(getSrc[i]).attr('src');
 console.log(i);
@@ -108,8 +108,8 @@ function prev(){
 i--;
   var next = i + 1;
 var getClass = $('.images');
-var addBorder = $(getClass[i]).css("border", "5px solid black");
-var removeBorder = $(getClass[next]).css("border", "none");
+var addBorder = $(getClass[i]).addClass("selected");
+var removeBorder = $(getClass[next]).removeClass("selected");
 var getSrc = $('.find-image');
 var findSrc = $(getSrc[i]).attr('src');
 console.log(i);
