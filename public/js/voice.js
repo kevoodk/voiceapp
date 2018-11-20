@@ -78,8 +78,8 @@ else if(mostrecentword.indexOf("next")!==-1){
 }
 else if(mostrecentword.indexOf("read")!==-1){
 var arrOfPtags = document.getElementsByTagName("p");
-for (var i = 0;i < arrOfPtags.length; i++){
-    readArray.push(arrOfPtags[i].textContent);
+for (var j = 0;j < arrOfPtags.length; j++){
+    readArray.push(arrOfPtags[j].textContent);
 }
 myVoice.speak(readArray.toString());
 }
