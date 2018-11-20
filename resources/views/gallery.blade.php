@@ -11,10 +11,10 @@
 </div>
 
 <div id="big-image">
-
 </div>
-<div id="images">
-
+<div class="thumbnail">
+  <div id="images">
+  </div>
 </div>
 
 @endsection
