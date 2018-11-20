@@ -21,6 +21,7 @@ var mostrecentword = myRec.resultString.split(' ').pop();
 if(myRec.resultValue==true){
 stringArray.push(myRec.resultString);
 }
+console.log(mostrecentword);
 var checkInputArray = inputArray.includes(mostrecentword);
 var chechMenuArray = menuArray.includes(mostrecentword);
 if(chechMenuArray){
@@ -141,9 +142,17 @@ if(mostrecentword.indexOf("start")!==-1){
 }else if(mostrecentword.indexOf("stop" || "Stop")!==-1){
      var convertToString = stringArray.toString();
      var convertToLower = convertToString.toLowerCase();
+     if(convertToLower.includes("kk find")){
+       var line = "new line";
+       var find = "kk find";
+       var result = convertToLower.match(new RegExp(find + '\\s(\\w+)'))[1];
+       console.log('New line');
+       var linebreak = convertToString.replace(result, result + "\");
+     }
      if(convertToLower.includes("kk switch")){
        var find = "kk switch";
        var edit = "kk with";
+
        var result1 = "";
         var text = convertToLower;
         var result = text.match(new RegExp(find + '\\s(\\w+)'))[1];
