@@ -54,11 +54,12 @@ if(checkInputArray){
   document.getElementById("password").value = str;
   document.getElementById("password-confirm").value = str;
 }
-}
+
 else if(mostrecentword.indexOf("go")!==-1){
     document.getElementById("register").click();
-}else if(mostrecentword.indexOf("access")!==-1){ 
+}else if(mostrecentword.indexOf("access")!==-1){
     document.getElementById("login").click();
+}
 }
 // Scroll up and down
 if(mostrecentword.indexOf("down")!==-1){
