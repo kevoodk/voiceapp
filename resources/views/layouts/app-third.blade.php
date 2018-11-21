@@ -15,13 +15,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/p5.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.5/addons/p5.dom.js"></script>
       <script src="{{ URL::asset('js/lib/p5.speech.js') }}"></script>
+      <script src="{{ URL::asset('js/voice.js') }}"></script>
+      <script src="{{ URL::asset('js/contacts.js') }}"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
     <!-- Styles -->
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom-second.css') }}" rel="stylesheet">
 </head>
 <body>
     <div class="landing-nav">
@@ -49,7 +51,7 @@
           <a href="/contacts">Contacts</a>
         </li>
         <li class="nav-item">
-          <a href="/games">Games</a>
+          <a href="/game">Game</a>
         </li>
       </ul>
       @endguest
@@ -84,20 +86,6 @@
             @yield('content')
         </main>
     </div>
+<script src="{{ URL::asset('js/tetris.js') }}"></script>
 </body>
-</html>
-
-
-
-
-        <style>
-            canvas{
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-
-        <div class="score" id="score">0</div>
-        <canvas id="canvas" width="450" height="450"></canvas>
-    <script src="{{ URL::asset('js/tetris.js') }}"></script>
 </html>

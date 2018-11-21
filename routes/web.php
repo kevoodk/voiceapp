@@ -22,8 +22,8 @@ Route::get('/contacts', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 });
-Route::get('/games', function () {
-    return view('games');
+Route::get('/game', function () {
+    return view('game');
 });
 
 Route::get('/about', function () {

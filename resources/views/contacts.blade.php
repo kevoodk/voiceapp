@@ -1,15 +1,31 @@
-@extends('layouts.app')
+@extends('layouts.app-second')
 
 @section('content')
+<div class="title">
+  <h1>
+    Contact us!
+  </h1>
+</div>
+<div class="divader">
+  <img src="../img/line.png">
+</div>
 
-<h1 style="margin:0 auto; text-align:center;">Contact us!</h1>
-<p style="margin:0 auto; text-align:center;">You can contact us here</p>
-<form style="width:500px; margin:0 auto;">
-  <input style="width:100%;"type="text" id="name" name="contact-name" placeholder="Insert you name"/>
-  <input style="width:100%;" type="email" id="email" name="contact-email" placeholder="Insert your email"/>
+<form>
+  <input type="text" id="name" name="contact-name" placeholder="Insert you name"/>
+  <input type="email" id="email" name="contact-email" placeholder="Insert your email"/>
   <textarea style="width:100%;" name="question" cols="40" rows="5" id="question"></textarea>
   <button type="submit">Send question</button>
 </form>
-<a href="geo:124.028582,-29.201930" target="_blank">Click here for map</a>
-
+<!--<a href="geo:124.028582,-29.201930" target="_blank">Click here for map</a>-->
+<div class="robot">
+  <img src="../img/robot_v2.png">
+</div>
+<div class="robot-text-block">
+  <p></p>
+</div>
+<div class="back-stripe">
+  <img src="../img/back-stripe.png">
+</div>
+<div class="robot-text-block-2">
+</div>
 @endsection

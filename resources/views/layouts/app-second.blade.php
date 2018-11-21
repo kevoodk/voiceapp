@@ -51,7 +51,7 @@
           <a href="/contacts">Contacts</a>
         </li>
         <li class="nav-item">
-          <a href="/games">Games</a>
+          <a href="/game">Game</a>
         </li>
       </ul>
       @endguest

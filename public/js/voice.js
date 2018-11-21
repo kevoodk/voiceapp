@@ -11,7 +11,7 @@ myRec.start();
  // start engine
 }
 
-var menuArray = ["in", "register", "home", "gallery", "contacts", "about"];
+var menuArray = ["in", "register", "home", "gallery", "contacts", "about" , "game"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 

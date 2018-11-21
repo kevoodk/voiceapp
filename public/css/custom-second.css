@@ -309,13 +309,15 @@ input {
   background: none;
   border: 1px solid #0b0b49;
   border-radius: 10px;
-  width: 100%;
+  width: 50%;
   height: 30px;
+  float: left;
   margin: 8px 0 15px 0;
   color: #0b0b49;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
   font-size: 15px;
+  padding-left: 10px;
 }
 
 button {
@@ -472,4 +474,20 @@ img.find-image {
 }
 
 .selected {
+}
+
+/*contacts*/
+
+form {
+  float: left;
+  margin-top: 11%;
+  margin-left: 3%;
+  width: 35%;
+}
+
+canvas{
+    display: block;
+    float: left;
+    margin-top: 6%;
+    margin-left: 3%;
 }
