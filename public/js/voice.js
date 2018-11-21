@@ -11,7 +11,7 @@ myRec.start();
  // start engine
 }
 
-var menuArray = ["login", "register", "home", "gallery", "contacts", "about"];
+var menuArray = ["in", "register", "home", "gallery", "contacts", "about"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
 
@@ -28,7 +28,11 @@ console.log(mostrecentword);
 var checkInputArray = inputArray.includes(mostrecentword);
 var chechMenuArray = menuArray.includes(mostrecentword);
 if(chechMenuArray){
+  if(mostrecentword.indexOf("in")!==-1){
+    window.location.href = "login";
+  }else{
 window.location.href = mostrecentword;
+}
 }
 if(checkInputArray){
   let str =  myRec.resultString;
@@ -53,7 +57,7 @@ if(checkInputArray){
 }
 else if(mostrecentword.indexOf("go")!==-1){
     document.getElementById("register").click();
-}else if(mostrecentword.indexOf("access")!==-1){
+}else if(mostrecentword.indexOf("access")!==-1){ 
     document.getElementById("login").click();
 }
 // Scroll up and down
