@@ -202,11 +202,34 @@ h1 {
 }
 
 .robot-text-block {
+  z-index: 999;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  border-radius: 5px;
   position: absolute;
-  bottom: 50px;
+  bottom: 17.2%;
+  right: 24.5%;
+  height: 29%;
+  width: 8.5%;
+  transform: translate3d( 0 , -5% , 0) ;
+    animation: levitate 2s ease-in-out infinite alternate ;
+}
+
+@keyframes levitate	{
+    100%	{
+    transform: translate3d( 0 , -2% , 0) ;
+		}
+}
+
+.robot-text-block-2 {
+  position: absolute;
+  bottom: 28%;
   right: 3%;
-  height: 50%;
-  width: 15%;
+  height: 24%;
+  width: 12%;
   background: rgba(255,255,255, 0.3);
   border-radius: 20px;
 }

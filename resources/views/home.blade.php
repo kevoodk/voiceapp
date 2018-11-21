@@ -23,9 +23,11 @@
 </div>
 
 <div class="robot">
-  <img src="../img/robot.png">
+  <img src="../img/robot_v2.png">
 </div>
 <div class="robot-text-block">
   <p></p>
+</div>
+<div class="robot-text-block-2">
 </div>
 @endsection
