@@ -17,4 +17,16 @@
   </div>
 </div>
 
+<div class="robot">
+  <img src="../img/robot_v2.png">
+</div>
+<div class="robot-text-block">
+  <p></p>
+</div>
+<div class="back-stripe">
+  <img src="../img/back-stripe.png">
+</div>
+<div class="robot-text-block-2">
+</div>
+
 @endsection

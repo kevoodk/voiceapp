@@ -251,9 +251,10 @@ button:hover {
 /*welcome page*/
 
 .username-logout {
-  position: absolute;
+  position: fixed;
   top: 3%;
   right: 3%;
+  z-index: 1000;
 }
 
 .site-navigation {
@@ -294,21 +295,15 @@ button:hover {
 }
 
 .site-navigation ul li ul {
-	background: none;
+	background: #fff;
 	visibility: hidden;
 	float: left;
 	position: absolute;
   transition: visibility 0.65s ease-in;
   margin-top:10px;
-	left: 0;
+  right: 3%;
 	z-index: 999;
-  border: 1px solid #fff;
   border-radius: 10px;
-}
-
-.site-navigation ul li ul:hover {
-  border-radius: 10px;
-  background: rgba(255,255,255, 0.3);
 }
 
 .site-navigation ul li:hover > ul,
@@ -317,14 +312,24 @@ button:hover {
 }
 
 .site-navigation ul li ul li {
-  font-weight: normal;
 	clear: both;
-	padding: 10px;
+	padding: 15px 15px 10px 15px;
   width: 100%;
 }
 
-.site-navigation ul li ul li:hover {
-	background: none;
+.site-navigation ul li ul li a {
+	color: #00D3B3 !important;
+}
+
+.site-navigation ul li ul li a:hover {
+	color: #0B0B49 !important;
+}
+
+ul {
+  text-decoration: none;
+}
+li {
+  float: left;
 }
 
 /*gallery slider */

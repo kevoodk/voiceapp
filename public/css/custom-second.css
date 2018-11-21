@@ -235,7 +235,7 @@ h1 {
 }
 
 .section-two {
-  background: #e0e0e0;
+  background: #efefef;
   width: 100%;
   height: 1000px;
   margin-top: 37.5%;
@@ -247,29 +247,30 @@ h1 {
   width: 100%;
   height: 200px;
   float: left;
-  margin-top: 50%;
+  margin-top: -5%;
 }
 
 
 /* navigation*/
 
 .landing-nav {
-  width: 30%;
+  width: auto;
   position: fixed;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f9f9f9+0,f9f9f9+100&1+0,0.9+62,0+100 */
-  background: -moz-linear-gradient(left, rgba(249,249,249,1) 0%, rgba(249,249,249,0.9) 62%, rgba(249,249,249,0) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(left, rgba(249,249,249,1) 0%,rgba(249,249,249,0.9) 62%,rgba(249,249,249,0) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to right, rgba(249,249,249,1) 0%,rgba(249,249,249,0.9) 62%,rgba(249,249,249,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#00f9f9f9',GradientType=1 ); /* IE6-9 */
-  top: 90%;
-  padding-left: 30px;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+0,0.85+27,1+100 */
+  background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 27%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 27%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.85) 27%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+  top: 0%;
+  right: 0%;
+  padding-right: 150px;
   height: 92px;
   z-index: 1000;
 }
 
 .landing-nav ul li {
   list-style: none;
-  margin-top: 10px;
+  margin-top: 24px;
 }
 
 li {
@@ -340,9 +341,10 @@ button:hover {
 /*welcome page*/
 
 .username-logout {
-  position: absolute;
+  position: fixed;
   top: 3%;
   right: 3%;
+  z-index: 1000;
 }
 
 .site-navigation {
@@ -383,21 +385,15 @@ button:hover {
 }
 
 .site-navigation ul li ul {
-	background: none;
+	background: #fff;
 	visibility: hidden;
 	float: left;
 	position: absolute;
   transition: visibility 0.65s ease-in;
   margin-top:10px;
-	left: 0;
+  right: 3%;
 	z-index: 999;
-  border: 1px solid #0b0b49;
   border-radius: 10px;
-}
-
-.site-navigation ul li ul:hover {
-  border-radius: 10px;
-  background: #fff;
 }
 
 .site-navigation ul li:hover > ul,
@@ -406,14 +402,13 @@ button:hover {
 }
 
 .site-navigation ul li ul li {
-  font-weight: normal;
 	clear: both;
-	padding: 10px;
+	padding: 15px 15px 10px 15px;
   width: 100%;
 }
 
-.site-navigation ul li ul li:hover {
-	background: none;
+.site-navigation ul li ul li a:hover {
+	color: #00D3B3 !important;
 }
 
 ul {
@@ -434,21 +429,23 @@ li {
   float: left;
   overflow: hidden;
   margin-top: 50px;
-  margin-left: 70px;
+  margin-bottom: 50px;
   margin-right: 20px;
 }
 
 #big-image img{
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 110%;
 }
 
 .thumbnail {
-  width: 50%;
+  width: 92%;
   height: auto;
-  margin-top: 50px;
-  margin-right: 70px;
-  float: right;
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 88%;
+  margin-bottom: 3%;
 }
 
 
@@ -458,19 +455,21 @@ li {
 }
 
 .images {
-  width: 18%;
-  height: 150px;
-  float: left;
-  overflow: hidden;
-  margin: 5px;
+    width: 11.1%;
+    height: 120px;
+    float: left;
+    overflow: hidden;
 }
 
 .find-image {
-  width: 100%;
+  width: 11.1%;
+  height: 120px;
   overflow: hidden;
 }
 
+img.find-image {
+  height: auto;
+}
+
 .selected {
-  transform: scale(1.2);
-  margin: 0 5px 0 5px;
 }
