@@ -53,6 +53,9 @@
         <li class="nav-item">
           <a href="/game">Game</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
+     </li>
       </ul>
       @endguest
     </div>

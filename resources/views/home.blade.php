@@ -30,4 +30,9 @@
 </div>
 <div class="robot-text-block-2">
 </div>
+@role('admin')
+
+<h1>Hello from the admin</h1>
+
+@endrole
 @endsection
