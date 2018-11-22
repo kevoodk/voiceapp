@@ -12,7 +12,7 @@
         <tr>
           <td>{{$user->name}} </td>
           <td>{{$user->email}}</td>
-          <td><a href="{{route('profile.edit')}}">Edit</a></td>
+          <td><a href="{{ route('profile.edit', $user->id) }}">Edit</a>
         </tr>
 @endforeach
 </table>

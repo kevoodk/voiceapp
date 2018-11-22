@@ -1,1 +1,1 @@
-<p>Hello my friend</p>
+<p>{{$id}}</p>

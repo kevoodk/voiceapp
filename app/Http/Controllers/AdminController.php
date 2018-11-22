@@ -16,6 +16,6 @@ class AdminController extends Controller
        return view('profile', compact('users'));
    }
    public function Edit(){
-     // return "hello";
+     return;
    }
 }

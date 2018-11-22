@@ -41,9 +41,9 @@ Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
 
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
-Route::get('/profile/edit/{id}', function() {
-  return view('edit');
-});
+Route::get('/profile/{id}/edit/', function() {
+  return view('edit', compact('id'));
+})->name('profile.edit');
 Route::group(['middleware' => 'role:admin'], function() {
    Route::get('/game', function() {
       return 'Welcome Admin';
