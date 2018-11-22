@@ -613,3 +613,11 @@ canvas{
   text-decoration: none;
   color: #fff;
 }
+
+.blog-text-title {
+  float: left;
+}
+
+.blog-textarea {
+  float: left;
+}
