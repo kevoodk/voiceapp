@@ -39,23 +39,23 @@
         </li>
         @else
         <li class="nav-item">
+          <a href="/home">Home</a>
+        </li>
+        <li class="nav-item">
           <a href="/about">About</a>
         </li>
         <li class="nav-item">
           <a href="/gallery">Gallery</a>
         </li>
         <li class="nav-item">
-          <a href="/shop">Shop</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contacts">Contacts</a>
-        </li>
-        <li class="nav-item">
           <a href="/game">Game</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
-     </li>
+        </li>
+        <li class="nav-item">
+          <a href="/contacts">Contacts</a>
+        </li>
       </ul>
       @endguest
     </div>
