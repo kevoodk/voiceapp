@@ -51,7 +51,7 @@
           <a href="/game">Game</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('post.create') }}">Create Post</a>
+          <a href="/posts">Blog</a>
         </li>
         <li class="nav-item">
           <a href="/contacts">Contacts</a>

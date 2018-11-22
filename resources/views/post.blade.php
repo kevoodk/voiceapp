@@ -1,9 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+            <div class="title">
+              <h1>
+                Create a blog
+              </h1>
+            </div>
+            <div class="divader">
+              <img src="../img/line.png">
+            </div>
+            @if (Auth::check())
+
             <div class="card">
                 <div class="card-header">Create Post</div>
                 <div class="card-body">
@@ -23,7 +30,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
+            @else
+            <h3 class="notloggedin">You need to log in. <a href="/login">Click here to login</a></h3>
+            @endif
 @endsection
