@@ -15,4 +15,7 @@ class AdminController extends Controller
        $users = User::all();
        return view('profile', compact('users'));
    }
+   public function Edit(){
+     // return "hello";
+   }
 }
