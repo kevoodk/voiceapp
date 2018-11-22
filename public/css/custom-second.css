@@ -208,8 +208,8 @@ h1 {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 10px;
-  border-radius: 5px;
   position: absolute;
+  border-radius: 5px;
   bottom: 17.2%;
   right: 24.5%;
   height: 29%;
@@ -226,30 +226,35 @@ h1 {
 
 .robot-text-block-2 {
   position: absolute;
+  border-radius: 5px;
   bottom: 28%;
   right: 3%;
   height: 24%;
   width: 12%;
   background: rgba(255,255,255, 0.3);
-  border-radius: 20px;
 }
 
 .section-two {
   background: #efefef;
   width: 100%;
-  height: 1000px;
-  margin-top: 37.5%;
+  height: auto;
+  margin-top: 32%;
   float: left;
+  margin-bottom: 70px;
 }
 
-.footer {
-  background: #AFAFAF;
+.middle-banner {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00d3b3+0,3937aa+100 */
+  background: rgb(0,211,179); /* Old browsers */
+  background: -moz-linear-gradient(-45deg, rgba(0,211,179,1) 0%, rgba(57,55,170,1) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(0,211,179,1) 0%,rgba(57,55,170,1) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(0,211,179,1) 0%,rgba(57,55,170,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00d3b3', endColorstr='#3937aa',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   width: 100%;
   height: 200px;
   float: left;
-  margin-top: -5%;
+  position: relative;
 }
-
 
 /* navigation*/
 
@@ -308,7 +313,6 @@ label {
 input {
   background: none;
   border: 1px solid #0b0b49;
-  border-radius: 10px;
   width: 50%;
   height: 30px;
   float: left;
@@ -325,7 +329,6 @@ button {
   float: right;
   background: #00d3b3;
   border: none;
-  border-radius: 10px;
   color: #fff;
   font-family: 'Raleway', sans-serif;
   text-transform: uppercase;
@@ -395,7 +398,6 @@ button:hover {
   margin-top:10px;
   right: 3%;
 	z-index: 999;
-  border-radius: 10px;
 }
 
 .site-navigation ul li:hover > ul,
@@ -496,9 +498,118 @@ canvas{
 
 .blog-box {
   float: left;
+  width: 93%;
+  height: auto;
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+  margin-top: 50px;
+}
+
+.blog-card {
+  float: left;
+  width: 19%;
+  margin-right: 1.25%;
+  margin-top: 1.25%;;
+  height: auto;
+}
+
+.blog-card:nth-child(5n) {
+  margin-right: 0;
+}
+
+.blog-img {
+  float: left;
+  width: 100%;
+  height: 250px;
+  background: #D1D1D1;
+  overflow: hidden;
+}
+
+.blog-img img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-title {
+  float: left;
+  width: 100%;
+  height: 40px;
+}
+
+.blog-title h6 {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+  color: #0B0B49;
+  margin: 10px 0 10px 0;
+  text-transform: uppercase;
+}
+
+.blog-footer {
+  float: left;
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px solid #0B0B49;
+}
+
+.blog-footer-left {
+  float: left;
+  width: 50%;
+  padding-bottom: 5px;
+}
+
+.blog-footer-left p {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  color: #0B0B49;
+  margin: 10px 0 10px 0;
+  text-transform: uppercase;
+}
+
+.blog-footer-right {
+  float: right;
+  width: 40%;
+  height: 100%;
+}
+
+.read-more {
+  float: right;
+  width: 100%;
+  height: 35px;
+  background: #00D3B3;
+  text-align: center;
+  line-height: 35px;
+}
+
+.read-more a {
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 .create-blog {
-  float: left;
+  width: 10%;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 50px;
+  border: 2px solid #fff;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.create-blog a {
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
 }

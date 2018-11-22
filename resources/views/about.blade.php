@@ -35,6 +35,8 @@
 </div>
 
 <div class="section-two">
+  <div class="middle-banner">
+  </div>
   <div class="p5">
     <img src="../img/p5.png">
   </div>
@@ -52,9 +54,6 @@
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
           nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
           enim ad minim veniam, quis nostrud</p>
-  </div>
-
-  <div class="footer">
   </div>
 </div>
 @endsection
