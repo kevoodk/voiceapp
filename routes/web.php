@@ -41,9 +41,10 @@ Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
 
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
-// Route::group(['middleware' => 'role:admin'], function() {
-//    Route::get('/home', function() {
-//       return 'Welcome Admin';
-//    });
-// });
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => 'role:admin'], function() {
+   Route::get('/game', function() {
+      return 'Welcome Admin';
+   });
+});
+Route::get('/profile', 'AdminController@ShowUserlist');
+ Route::get('/home', 'HomeController@index')->name('home');
