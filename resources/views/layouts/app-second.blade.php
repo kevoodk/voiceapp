@@ -26,44 +26,38 @@
     <link href="{{ asset('css/custom-second.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="landing-nav">
-      <ul>
-        @guest
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-        </li>
-        <li class="nav-item">
-          @if (Route::has('register'))
-          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-          @endif
-        </li>
-        @else
-        <li class="nav-item">
-          <a href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="/gallery">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a href="/game">Game</a>
-        </li>
-        <li class="nav-item">
-          <a href="/posts">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contacts">Contacts</a>
-        </li>
-      </ul>
-      @endguest
-    </div>
+      <div class="landing-nav"></div>
       @guest
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+      </li>
+      <li class="nav-item">
+        @if (Route::has('register'))
+        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+        @endif
+      </li>
       @else
       <div class="username-logout">
         <nav id="navigation" class="site-navigation" role="navigation">
         <ul class="menu">
+          <li class="nav-item">
+            <a href="/home">Home</a>
+          </li>
+          <li class="menu-item">
+            <a href="/about">About</a>
+          </li>
+          <li class="menu-item">
+            <a href="/gallery">Gallery</a>
+          </li>
+          <li class="menu-item">
+            <a href="/game">Game</a>
+          </li>
+          <li class="menu-item">
+            <a href="/posts">Blog</a>
+          </li>
+          <li class="menu-item">
+            <a href="/contacts">Contacts</a>
+          </li>
           <li class="menu-item">
             <a>
               {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>

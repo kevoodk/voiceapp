@@ -26,69 +26,62 @@
     <link href="{{ asset('css/custom-second.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div class="landing-nav">
-      <ul>
-        @guest
-        <li class="nav-item">
-          <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+  @guest
+  <li class="nav-item">
+    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+  </li>
+  <li class="nav-item">
+    @if (Route::has('register'))
+    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+    @endif
+  </li>
+  @else
+  <div class="username-logout">
+    <nav id="navigation" class="site-navigation" role="navigation">
+    <ul class="menu">
+      <li class="nav-item">
+        <a href="/home">Home</a>
+      </li>
+      <li class="menu-item">
+        <a href="/about">About</a>
+      </li>
+      <li class="menu-item">
+        <a href="/gallery">Gallery</a>
+      </li>
+      <li class="menu-item">
+        <a href="/game">Game</a>
+      </li>
+      <li class="menu-item">
+        <a href="/posts">Blog</a>
+      </li>
+      <li class="menu-item">
+        <a href="/contacts">Contacts</a>
+      </li>
+      <li class="menu-item">
+        <a>
+          {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>
+        </a>
+        <ul class="dropdown">
+          <li class="menu-item sub-menu">
+            <a class="" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+            {{ __('Logout') }}
+          </a>
         </li>
-        <li class="nav-item">
-          @if (Route::has('register'))
-          <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-          @endif
-        </li>
-        @else
-        <li class="nav-item">
-          <a href="/home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a href="/about">About</a>
-        </li>
-        <li class="nav-item">
-          <a href="/gallery">Gallery</a>
-        </li>
-        <li class="nav-item">
-          <a href="/game">Game</a>
-        </li>
-        <li class="nav-item">
-          <a href="/posts">Blog</a>
-        </li>
-        <li class="nav-item">
-          <a href="/contacts">Contacts</a>
-        </li>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
       </ul>
-      @endguest
-    </div>
-      @guest
-      @else
-      <div class="username-logout">
-        <nav id="navigation" class="site-navigation" role="navigation">
-        <ul class="menu">
-          <li class="menu-item">
-            <a>
-              {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>
-            </a>
-            <ul class="dropdown">
-              <li class="menu-item sub-menu">
-                <a class="" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-              </a>
-            </li>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              @csrf
-            </form>
-          </ul>
-          </li>
-        </ul>
-      </nav>
-      </div>
-      @endguest
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
+      </li>
+    </ul>
+  </nav>
+  </div>
+  @endguest
+    <main class="py-4">
+        @yield('content')
+    </main>
+</div>
 <script src="{{ URL::asset('js/tetris.js') }}"></script>
 </body>
 </html>

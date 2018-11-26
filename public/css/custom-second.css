@@ -259,7 +259,7 @@ h1 {
 /* navigation*/
 
 .landing-nav {
-  width: auto;
+  width: 50%;
   position: fixed;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+0,0.85+27,1+100 */
   background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.85) 27%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
@@ -268,7 +268,6 @@ h1 {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
   top: 0%;
   right: 0%;
-  padding-right: 150px;
   height: 92px;
   z-index: 1000;
 }
@@ -371,10 +370,14 @@ button:hover {
   background: none;
 	display: block;
 	float: left;
-	padding: 12px 0 12px 12px;
+	padding: 12px 30px 12px 12px;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
+}
+
+.site-navigation li:last-child {
+	padding: 12px 0 12px 12px;
 }
 
 .site-navigation li a {
@@ -384,9 +387,9 @@ button:hover {
 }
 
 .site-navigation li:hover {
-	@include transition(background, 0.2s);
 	background: none;
 	cursor: pointer;
+  color: #00D3B3;
 }
 
 .site-navigation ul li ul {
