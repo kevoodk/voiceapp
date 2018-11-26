@@ -70,8 +70,9 @@ class AdminController extends Controller
     public function edit($id)
     {
       $roles = Role::all();
+      $user = User::find($id);
 
-  return view('edit', compact('roles'));
+  return view('edit', compact('roles', 'user'));
     }
 
     /**
