@@ -44,10 +44,10 @@ Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
 Route::get('/profile/{id}/edit/', function() {
   return view('edit', compact('id'));
 })->name('profile.edit');
-Route::group(['middleware' => 'role:admin'], function() {
-   Route::get('/game', function() {
-      return 'Welcome Admin';
-   });
-});
+// Route::group(['middleware' => 'role:admin'], function() {
+//    Route::get('/game', function() {
+//       return 'Welcome Admin';
+//    });
+// });
 Route::get('/profile', 'AdminController@ShowUserlist');
  Route::get('/home', 'HomeController@index')->name('home');
