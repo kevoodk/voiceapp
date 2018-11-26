@@ -66,7 +66,7 @@ background:#efefef;
 .title {
   float: left;
   width: 90%;
-  height: 50%;
+  height: 16%;
   margin-top: 1.5%;
   margin-bottom: 1.5%;
   margin-left: 3%;
@@ -599,7 +599,6 @@ canvas{
   line-height: 50px;
   border: 2px solid #fff;
   position: absolute;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -615,9 +614,165 @@ canvas{
 }
 
 .blog-text-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.blog-text-title p {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+.blog-left{
   float: left;
+  width: 60%;
+  height: auto;
 }
 
 .blog-textarea {
   float: left;
+  padding-right: 50px;
+}
+
+.blog-textarea p {
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  margin: 0 0 50px 0;
+}
+
+.blog-right {
+  float: right;
+  width: 40%;
+  height: 500px;
+  background: #D1D1D1;
+  overflow: hidden;
+}
+
+.blog-right img {
+  width: 100%;
+  height: auto;
+}
+
+.blog-text-footer {
+  float: left;
+  width: 57%;
+}
+
+.blog-text-footer p {
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+  margin: 10px 0 20px 0;
+  font-weight: 500;
+}
+
+.blog-text-comments {
+  float: left;
+  width: 100%;
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-decoration: none;
+}
+
+.blog-text-comments form {
+  width: 100%;
+  height:auto;
+  margin: 0;
+}
+
+.blog-text-comments form textarea {
+  background: none;
+  border-bottom: 1px solid #0b0b49;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 20px;
+  float: left;
+  margin: 0 0 15px 0;
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding-left: 10px;
+}
+
+.blog-text-comments form textarea::placeholder {
+  color: #666;
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.blog-text-comments button {
+  height: 30px;
+  float: right;
+  background: #00d3b3;
+  border: none;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 0 15px 0 15px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.blog-text-comments button:hover {
+  background: #00d3b3;
+  font-weight: 700;
+}
+
+.display-comment {
+  font-size: 12px;
+  width: 95%;
+  float: right;
+}
+
+.display-comment p {
+margin: 0 0 10px 0;
+}
+
+.display-comment button {
+  float: right;
+  border: none;
+  background: none;
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-size: 12px;
+  padding: 0 10px 0 10px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.display-comment button:hover {
+  border: none;
+  background: none;
+  color: #0b0b49;
+  font-weight: 700;
+}
+
+.display-comment form textarea {
+  background: none;
+  border-bottom: 1px solid #d1d1d1;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  height: 20px;
+  float: left;
+  margin: 0;
+  color: #0b0b49;
+  font-family: 'Raleway', sans-serif;
+  text-transform: capitalize;
+  font-size: 15px;
+  padding-left: 10px;
 }
