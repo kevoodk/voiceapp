@@ -41,13 +41,11 @@ Route::get('/post/show/{id}', 'PostController@show')->name('post.show');
 
 Route::post('/comment/store', 'CommentController@store')->name('comment.add');
 Route::post('/reply/store', 'CommentController@replyStore')->name('reply.add');
-Route::get('/profile/{id}/edit/', function() {
-  return view('edit', compact('id'));
-})->name('profile.edit');
-// Route::group(['middleware' => 'role:admin'], function() {
-//    Route::get('/game', function() {
-//       return 'Welcome Admin';
-//    });
-// });
+// Route::get('/profile/{id}/edit/', function() {
+//   return view('edit', compact('id'));
+// })->name('profile.edit');
+Route::group(['middleware' => 'role:admin'], function() {
+   Route::resource('/profile', 'AdminController');
+});
 Route::get('/profile', 'AdminController@ShowUserlist');
  Route::get('/home', 'HomeController@index')->name('home');
