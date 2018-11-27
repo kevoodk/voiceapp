@@ -23,6 +23,12 @@
   <div class="profile-title">
     <h2>{{ Auth::user()->name }}'s profile</h2>
   </div>
+  <div id="posts">
+    @foreach($findPosts as $post)
+      <h3>{{$post->title}}</h3>
+      <p>{{$post->body}}</p>
+    @endforeach
+  </div>
 </div>
 
 <div class="robot">
@@ -31,6 +37,7 @@
 <div class="robot-text-block">
   <p></p>
 </div>
+
 <div class="back-stripe">
   <img src="../img/back-stripe.png">
 </div>
