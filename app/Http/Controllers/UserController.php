@@ -5,12 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Image;
+use App\Post;
 
 class UserController extends Controller
 {
     //
     public function profile(){
-      return view('/userprofile', array('user' => Auth::user()) );
+      $userId = auth()->user()->id;
+      $findPosts = Post::where("user_id", "=", $userId)->get();
+
+      return view('/userprofile', compact('findPosts'), array('user' => Auth::user()) );
     }
 
     public function update_avatar(Request $request){
