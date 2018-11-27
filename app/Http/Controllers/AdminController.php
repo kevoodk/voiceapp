@@ -54,7 +54,8 @@ class AdminController extends Controller
         DB::table('users_roles')->insert(
           ['user_id' => $user, 'role_id' => $role]
         );
-        return view('profile');
+        $users = User::all();
+        return redirect()->back()->with('message', 'IT WORKS!');
     }
 
     /**
