@@ -817,7 +817,22 @@ margin: 0 0 10px 0;
 
 .profile-block {
   float: left;
-  text-transform: capitalize;
+  width: 45%;
+  height: auto;
+  margin-top: 200px;
+}
+
+.profile-picture{
+  width: 90%;
+  float: right;
+}
+
+.profile-picture img{
+  float: left;
+}
+
+.profile-picture form{
+  float: left;
 }
 
 .profile-block img {
