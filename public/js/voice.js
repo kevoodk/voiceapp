@@ -13,7 +13,7 @@ myRec.start();
 
 var menuArray = ["in", "register", "home", "gallery", "contacts", "about" , "game"];
 var inputArray = ["name", "email", "password", "access", "submit"];
-var commandsArray = ["down", "up", "hide", "show", "next", "previous"];
+var commandsArray = ["down", "up", "hide", "show", "next", "previous", "choose"];
 
 function parseResult(){
 mostrecentstring = myRec.resultString;
@@ -75,6 +75,11 @@ else if(mostrecentword.indexOf("show")!==-1){
 else if(mostrecentword.indexOf("disappear")!==-1){
     document.body.style.opacity = "0";
 
+}
+else if(mostrecentword.indexOf("choose")!==-1){
+  var x = $('#big-image img').attr('src');
+  $('#getsrc').val(x);
+  console.log()
 }
 // next and previous gallery
 else if(mostrecentword.indexOf("next")!==-1){

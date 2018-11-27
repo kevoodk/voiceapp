@@ -18,6 +18,13 @@
                     <form method="post" action="{{ route('post.store') }}">
                         <div class="form-group">
                             @csrf
+                            <div id="big-image">
+                            </div>
+                            <div class="thumbnail">
+                              <div id="images">
+                              </div>
+                            </div>
+                            <input type="hidden" name="image" id="getsrc"/>
                             <label class="label">Post Title: </label>
                             <textarea type="text" placeholder="Add a title" name="title" class="form-control" required></textarea>
                         </div>

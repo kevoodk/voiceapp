@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use Auth;
 class PostController extends Controller
 {
   public function __construct()
@@ -30,6 +31,8 @@ class PostController extends Controller
      public function store(Request $request)
      {
          $post =  new Post();
+         $post->user_id = auth()->user()->id;
+         $post->image = $request->get('image');
          $post->title = $request->get('title');
          $post->body = $request->get('body');
 
