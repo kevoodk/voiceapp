@@ -18,12 +18,24 @@
 <?php
 $i = 0;
 ?>
-@foreach($get_array as $test)
+<form action="{{ route('profile.destroy', $user->id) }}" method="POST">
+    @method('DELETE')
+    @csrf
 
-{{$get_array[$i]->slug}}
-{{$get_array[$i]->role_id}}
+
+<table>
+@foreach($get_array as $test)
+<tr>
+<td>{{$get_array[$i]->slug}}</td>
+<input type="hidden" name="roleid" value="{{$get_array[$i]->id}}"/>
+<td><button>Remove</button></td>
+
+</tr>
+
 <?php
 $i++;
 ?>
 @endforeach
+</table>
+</form>
 @endsection

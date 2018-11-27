@@ -120,9 +120,12 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $userrole = DB::select('delete from from users_roles where users_id = something and roles_id = something');
-        dd($usersrole);
+        $roleid = $request->input('roleid');
+        // dd($roleid, $id);
+        // $dev_role = Role::where('slug','developer')->first();
+        $userChangePermission = DB::table('users_roles')->where('user_id', $id)->where('role_id', $roleid)->delete();
+       // dd($userChangePermission);
     }
 }
