@@ -825,3 +825,17 @@ margin: 0 0 10px 0;
   text-transform: capitalize;
   font-size: 15px;
 }
+
+/*profile*/
+
+.profile-block {
+  float: left;
+  text-transform: capitalize;
+}
+
+.profile-block img {
+width: 200px;
+height: 200px;
+border-radius: 50%;
+background: #666;
+}

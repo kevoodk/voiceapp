@@ -30,6 +30,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/userprofile', 'UserController@profile');
+Route::post('/userprofile', 'UserController@update_avatar');
+
 
 Auth::routes();
 
