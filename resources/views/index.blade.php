@@ -46,7 +46,7 @@
     <div class="blog-box">
     @foreach($posts as $post)
           <div class="blog-card">
-            <div class="blog-img"></div>
+            <div class="blog-img"><img src="{{ $post->image }}"/></div>
             <div class="blog-title">
               <h6>{{ $post->title }}</h6>
             </div>

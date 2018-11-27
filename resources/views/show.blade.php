@@ -46,7 +46,7 @@
     <div class="blog-left">
       <div class="blog-textarea"><p>{{ $post->body }}</p></div>
     </div>
-    <div class="blog-right"></div>
+    <div class="blog-right"><img src="{{ $post->image }}"/></div>
     <div class="blog-text-footer">
       <p>Comments</p>
       <div class="blog-text-comments">
