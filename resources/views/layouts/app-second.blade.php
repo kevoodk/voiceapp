@@ -60,9 +60,15 @@
           </li>
           <li class="menu-item">
             <a>
+              <img src="/uploads/avatars/{{ Auth::user()->avatar }}">
               {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>
             </a>
             <ul class="dropdown">
+              <li class="menu-item sub-menu">
+                <a class="" href="{{ url('/userprofile') }}">
+                Profile
+              </a>
+            </li>
               <li class="menu-item sub-menu">
                 <a class="" href="{{ route('logout') }}"
                 onclick="event.preventDefault();

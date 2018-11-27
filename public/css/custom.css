@@ -274,7 +274,7 @@ button:hover {
   background: none;
 	display: block;
 	float: left;
-	padding: 12px 0 12px 12px;
+	padding: 30px 0 12px 12px;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -320,6 +320,15 @@ button:hover {
 
 .site-navigation ul li ul li a:hover {
 	color: #0B0B49 !important;
+}
+
+.site-navigation img {
+	width: 50px !important;
+  height: 50px !important;
+  float: left;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: -30px;
 }
 
 ul {

@@ -272,28 +272,6 @@ h1 {
   z-index: 1000;
 }
 
-.landing-nav ul li {
-  list-style: none;
-  margin-top: 24px;
-}
-
-li {
-  list-style: none;
-}
-
-.landing-nav ul li a {
-  color: #0b0b49;
-  font-family: 'Raleway', sans-serif;
-  text-decoration: none;
-  text-transform: uppercase;
-  padding-right: 40px;
-  font-weight: 700;
-}
-
-.landing-nav ul li a:hover {
-  color: #00D3B3;
-}
-
 /*auth*/
 
 .card {
@@ -370,14 +348,14 @@ button:hover {
   background: none;
 	display: block;
 	float: left;
-	padding: 12px 30px 12px 12px;
+	padding: 30px 30px 12px 12px;
 	position: relative;
 	text-decoration: none;
 	text-transform: uppercase;
 }
 
 .site-navigation li:last-child {
-	padding: 12px 0 12px 12px;
+	padding: 30px 0 12px 12px;
 }
 
 .site-navigation li a {
@@ -416,6 +394,15 @@ button:hover {
 
 .site-navigation ul li ul li a:hover {
 	color: #00D3B3 !important;
+}
+
+.site-navigation img {
+	width: 50px !important;
+  height: 50px !important;
+  float: left;
+  border-radius: 50%;
+  margin-right: 20px;
+  margin-top: -30px;
 }
 
 ul {
