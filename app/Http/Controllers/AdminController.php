@@ -7,6 +7,8 @@ use App\Post;
 use App\User;
 use App\Permission;
 use App\Role;
+use App\Permissions\HasPermissionsTrait;
+use DB;
 class AdminController extends Controller
 {
     /**
@@ -47,7 +49,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = $request->input('user');
+        $role = $request->input('role');
+        DB::table('users_roles')->insert(
+          ['user_id' => $user, 'role_id' => $role]
+        );
+        return view('profile');
     }
 
     /**
@@ -58,7 +65,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -69,11 +76,31 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
+      // dd($id);
       $roles = Role::all();
       $user = User::find($id);
-
-  return view('edit', compact('roles', 'user'));
+      $userrole = DB::select('select * from users_roles');
+      $stdClass = json_decode(json_encode($userrole));
+      $get_id;
+      $get_array = array();
+      $i = 0;
+      foreach($stdClass as $test){
+      $stdClass[$i]->user_id;
+      $stdClass[$i]->role_id;
+      if($stdClass[$i]->user_id == $id){
+        $get_id = $id;
+        $findRole = Role::find($stdClass[$i]->role_id);
+        $get_array[] = $findRole;
+      }
+      $i++;
     }
+
+
+      $get_array[0]->slug;
+      // $developer->roles()->attach($roles);
+      return view('edit', compact('roles', 'user', 'get_array'));
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -84,7 +111,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
     }
 
     /**
@@ -95,6 +122,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $userrole = DB::select('delete from from users_roles where users_id = something and roles_id = something');
+        dd($usersrole);
     }
 }
