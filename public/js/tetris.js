@@ -1,11 +1,40 @@
 var myRec = new p5.SpeechRec('en-US', parseResult);
-
+  var movement = 300;
    // new P5.SpeechRec object
   myRec.continuous = true; // do continuous recognition
-  myRec.interimResults = true; // allow partial recognition (faster, less accurate)
+  myRec.interimResults = false; // allow partial recognition (faster, less accurate)
   function setup(){
     	myRec.start(); // start engine
   }
+  function parseResult(){
+
+  var mostrecentword = myRec.resultString.split(' ').pop();
+  if(mostrecentword.indexOf("begin")!==-1){
+    init();
+    myRec.interimResults = true;
+    console.log(myRec.interimResults);
+
+  }
+  if(mostrecentword.indexOf("left")!==-1 && d != "right") d = "left";
+  else if(mostrecentword.indexOf("up")!==-1 && d != "down") d = "up";
+  else if(mostrecentword.indexOf("right")!==-1 && d != "left") d = "right";
+  else if(mostrecentword.indexOf("down")!==-1 && d != "up") d = "down";
+
+  if(mostrecentword.indexOf("faster")!==-1){
+    movement = movement - 50;
+    init();
+    console.log(movement);
+  }
+  if(mostrecentword.indexOf("slower")!==-1){
+    movement = movement + 50;
+    init();
+    console.log(movement);
+  }
+ //We will add another clause to prevent reverse gear
+
+}
+
+
 
 	//Canvas stuff
 	var canvas = $("#canvas")[0];
@@ -15,7 +44,7 @@ var myRec = new p5.SpeechRec('en-US', parseResult);
 
 	//Lets save the cell width in a variable for easy control
 	var cw = 10;
-	var d;
+  var d;
 	var food;
 	var score;
    var level;
@@ -35,9 +64,9 @@ var myRec = new p5.SpeechRec('en-US', parseResult);
 		//Lets move the snake now using a timer which will trigger the paint function
 		//every 60ms
 		if(typeof game_loop != "undefined") clearInterval(game_loop);
-		game_loop = setInterval(paint, 100);
+		game_loop = setInterval(paint, movement);
 	}
-	init();
+	// init();
 
 	function create_snake()
 	{
@@ -153,18 +182,14 @@ var myRec = new p5.SpeechRec('en-US', parseResult);
 		}
 		return false;
 	}
-
+  // var key = myRec.resultString.split(' ').pop();
 	//Lets add the keyboard controls now
-	function parseResult(){
-		 var key = myRec.resultString.split(' ').pop();
-     console.log(key);
-		//We will add another clause to prevent reverse gear
-		if(key.indexOf("left")!==-1 && d != "right") d = "left";
-		else if(key.indexOf("up")!==-1 && d != "down") d = "up";
-		else if(key.indexOf("right")!==-1 && d != "left") d = "right";
-		else if(key.indexOf("down")!==-1 && d != "up") d = "down";
+
+
 		//The snake is now keyboard controllable
-	}
+
+
+
   // function parseResult(){
   //   var mostrecentword = myRec.resultString.split(' ').pop();
   //   key(mostrecentword);

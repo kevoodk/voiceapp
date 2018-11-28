@@ -35,9 +35,9 @@
   </div>
 </div>
 
-<div class="create-blog">
-  <a>Start game</a>
-</div>
+<button class="create-blog" onclick="init()"> Begin game
+  <!-- <a>Start game</a> -->
+</button>
 
 <div class="score" id="score">0</div>
 <canvas id="canvas" width="450" height="450"></canvas>

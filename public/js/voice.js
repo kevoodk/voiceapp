@@ -93,6 +93,7 @@ else if(mostrecentword.indexOf("choose")!==-1){
   $('#getsrc').val(x);
   console.log()
 }
+
 // next and previous gallery
 else if(mostrecentword.indexOf("next")!==-1){
   next();
@@ -120,7 +121,7 @@ if(i >= getClass.length - 1){
   newImage();
 }
 
-document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>"
+document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>";
 }
 
 if(mostrecentword.indexOf("previous")!==-1){
@@ -158,7 +159,7 @@ var convertToLower = convertToString.toLowerCase();
       var text = convertToLower;
       keyword = text.match(new RegExp(find + '\\s(\\w+)'))[1];
       stringArray = [];
-      for(i = 0; i < 9; i++){
+      for(i = 0; i < 10; i++){
       newImage();
 
     }
@@ -207,8 +208,14 @@ if(mostrecentword.indexOf("start")!==-1){
 }
 
 }
+setTimeout(function bigImage(){
+  console.log('bigImage search');
+  var getSrc = $('.find-image');
+  var findSrc = $(getSrc[0]).attr('src');
+  document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>";
+}, 5000);
 var keyword = "dog";
-
+var newCount = 0;
    function newImage(){
 
        $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
@@ -227,8 +234,15 @@ var keyword = "dog";
            var html1 = "<div class=\" images\"><img class=\"find-image\" style=\"width:100%;\" src=\""+  image_src +"\"></div>";
            document.getElementById("images").innerHTML += html1;
 
+
+
        });
+       if(imageCount == 9){
+         bigImage();
+       }else{
        imageCount ++;
+     }
+
 
    }
    function getPageWelcome(menuArray){
