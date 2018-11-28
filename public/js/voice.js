@@ -9,12 +9,14 @@ var imageCount = 0;
 function setup(){
 myRec.start();
  // start engine
+
 }
 
+// console.log(window.location.href.toString());
 var menuArray = ["in", "register", "home", "gallery", "contacts", "about" , "game"];
 var inputArray = ["name", "email", "password", "access", "submit"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous", "choose"];
-
+getPageWelcome(menuArray);
 function parseResult(){
 mostrecentstring = myRec.resultString;
 $('.robot-text-block').text(mostrecentstring);
@@ -217,5 +219,32 @@ var keyword = "dog";
 
        });
        imageCount ++;
+
+   }
+   function getPageWelcome(menuArray){
+      var location = window.location.href;
+      window.onload = function(){
+      var menu = menuArray.toString();
+      var commandlist = "Here is my commands for this page </br> Down, Up </br> Hide, Show </br> Read </br>" + menu;
+
+      if(location.includes("home")){
+      document.getElementById("robot-test").innerHTML = commandlist;
+      myVoice.speak(commandlist);
+      }else if(location.includes("about")){
+        console.log('about page')
+      }else if(location.includes("gallery")){
+        console.log('gallery page')
+      }else if(location.includes("game")){
+        console.log('game page')
+      }else if(location.includes("posts")){
+        console.log('blog page')
+      }else if(location.includes("contacts")){
+        console.log('contact page')
+      }else if(location.includes("userprofile")){
+        console.log('profile page')
+      }else if(location.includes("profile")){
+        console.log('admin page')
+      }
+}
 
    }

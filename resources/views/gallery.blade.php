@@ -27,6 +27,7 @@
   <img src="../img/back-stripe.png">
 </div>
 <div class="robot-text-block-2">
+  <p id="robot-test"></p>
 </div>
 
 @endsection

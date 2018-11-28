@@ -67,6 +67,7 @@
   <p></p>
 </div>
 <div class="robot-text-block-2">
+  <p id="robot-test"></p>
   <p></p>
 </div>
 @endsection
