@@ -14,7 +14,7 @@ myRec.start();
 
 // console.log(window.location.href.toString());
 var menuArray = ["in", "register", "home", "gallery", "contacts", "about" , "game"];
-var inputArray = ["name", "email", "password", "access", "submit"];
+var inputArray = ["name", "email", "password", "access", "submit", "title"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous", "choose"];
 getPageWelcome(menuArray);
 function parseResult(){
@@ -68,6 +68,9 @@ else if(mostrecentword.indexOf("submit")!==-1){
 }
 if(mostrecentword.indexOf("create")!==-1){
 window.location.href = "post/create";
+}
+if(mostrecentword.indexOf("posted")!==-1){
+  $('.btn').click();
 }
 
 // Scroll up and down
