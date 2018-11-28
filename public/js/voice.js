@@ -41,15 +41,18 @@ if(checkInputArray){
   var mapObj = {
      email:"",
      name:"",
+     title: "",
      password:"",
      at:"@",
   };
-  str = str.replace(/email|at|name|password/gi, function(matched){
+  str = str.replace(/email|at|name|title|password/gi, function(matched){
     return mapObj[matched];
   });
   str = str.replace(/\s+/g, '');
   if(mostrecentword.indexOf("name")!==-1){
   document.getElementById("name").value = str;
+}else if(mostrecentword.indexOf("title")!==-1){
+  document.getElementById("title").value = str;
 }else if(mostrecentword.indexOf("email")!==-1){
   document.getElementById("email").value = str;
 }else if(mostrecentword.indexOf("password")!==-1){
@@ -57,12 +60,16 @@ if(checkInputArray){
   document.getElementById("password-confirm").value = str;
 }
 
-else if(mostrecentword.indexOf("go")!==-1){
+else if(mostrecentword.indexOf("submit")!==-1){
     document.getElementById("register").click();
 }else if(mostrecentword.indexOf("access")!==-1){
     document.getElementById("login").click();
 }
 }
+if(mostrecentword.indexOf("create")!==-1){
+window.location.href = "post/create";
+}
+
 // Scroll up and down
 if(mostrecentword.indexOf("down")!==-1){
 window.scrollBy(0, 100);
@@ -231,15 +238,15 @@ var keyword = "dog";
       document.getElementById("robot-test").innerHTML = commandlist;
       myVoice.speak(commandlist);
       }else if(location.includes("about")){
-        console.log('about page')
+      document.getElementById("robot-test").innerHTML = commandlist;
       }else if(location.includes("gallery")){
-        console.log('gallery page')
+        document.getElementById("robot-test").innerHTML = commandlist + "</br> Say:\"Find 'what you are looking for' search \" </br> Say Next or Previous to navigate in the gallery";
       }else if(location.includes("game")){
-        console.log('game page')
+        document.getElementById("robot-test").innerHTML = commandlist + "</br> Move the snake by saying Up, Down, Left, Right";
       }else if(location.includes("posts")){
-        console.log('blog page')
+        document.getElementById("robot-test").innerHTML = commandlist + "</br> Say create to make a blog";
       }else if(location.includes("contacts")){
-        console.log('contact page')
+        document.getElementById("robot-test").innerHTML = commandlist + "</br> Say your name, followed by \"name\" </br> Say your email followed by \" email.\" Say 'at' for getting @ </br> Say start to start writing, Say stop when you are done";
       }else if(location.includes("userprofile")){
         console.log('profile page')
       }else if(location.includes("profile")){
