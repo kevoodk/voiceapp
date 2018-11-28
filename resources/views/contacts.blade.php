@@ -10,12 +10,15 @@
   <img src="../img/line.png">
 </div>
 
-<form>
-  <input type="text" id="name" name="contact-name" placeholder="Insert you name"/>
-  <input type="email" id="email" name="contact-email" placeholder="Insert your email"/>
-  <textarea style="width:100%;" name="question" cols="40" rows="5" id="question"></textarea>
-  <button type="submit">Send question</button>
-</form>
+<div class="contacts-form">
+  <form>
+    <textarea type="text" id="name" name="contact-name" placeholder="Insert you name"/></textarea>
+    <textarea type="email" id="email" name="contact-email" placeholder="Insert your email"/></textarea>
+    <textarea style="width:100%;" name="question" placeholder="Your message" cols="40" rows="5" id="question"></textarea>
+    <button type="submit">Send question</button>
+  </form>
+</div>
+
 <!--<a href="geo:124.028582,-29.201930" target="_blank">Click here for map</a>-->
 <div class="robot">
   <img src="../img/robot_v2.png">
@@ -24,9 +27,10 @@
   <p></p>
 </div>
 <div class="back-stripe">
-  <img src="../img/back-stripe.png">
 </div>
 <div class="robot-text-block-2">
-  <p id="robot-test"></p>
+  <div class="text-block-center">
+    <p id="robot-test"></p>
+  </div>
 </div>
 @endsection

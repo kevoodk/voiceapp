@@ -14,18 +14,6 @@
   <img src="{{URL::asset('/img/line.png')}}">
 </div>
 
-<div class="paragraph">
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-    enim ad minim veniam, quis nostrud
-    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-      enim ad minim veniam, quis nostrud </p><br>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-        enim ad minim veniam, quis nostrud</p>
-</div>
-
 <div class="robot">
   <img src="{{URL::asset('/img/robot_v2.png')}}">
 </div>
@@ -33,18 +21,30 @@
   <p></p>
 </div>
 <div class="back-stripe">
-  <img src="{{URL::asset('/img/back-stripe.png')}}">
 </div>
 <div class="robot-text-block-2">
-  <p id="robot-test"></p>
+  <div class="text-block-center">
+    <p id="robot-test"></p>
+  </div>
+</div>
+
+<div class="paragraph">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+    enim ad minim veniam, quis nostrud
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud </p>
+</div>
+
+<div class="create-blog">
+  <a href="/posts">Back to blog</a>
 </div>
 
 <div class="section-two">
-  <div class="middle-banner">
-    <div class="blog-text-title"><p>{{ $post->title }}</p></div>
-  </div>
   <div class="blog-box">
     <div class="blog-left">
+      <div class="blog-text-title"><p>{{ $post->title }}</p></div>
       <div class="blog-textarea"><p>{{ $post->body }}</p></div>
     </div>
     <div class="blog-right"><img src="{{ $post->image }}"/></div>

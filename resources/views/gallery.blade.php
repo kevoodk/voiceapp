@@ -10,13 +10,6 @@
   <img src="../img/line.png">
 </div>
 
-<div id="big-image">
-</div>
-<div class="thumbnail">
-  <div id="images">
-  </div>
-</div>
-
 <div class="robot">
   <img src="../img/robot_v2.png">
 </div>
@@ -24,10 +17,29 @@
   <p></p>
 </div>
 <div class="back-stripe">
-  <img src="../img/back-stripe.png">
 </div>
 <div class="robot-text-block-2">
-  <p id="robot-test"></p>
+  <div class="text-block-center">
+    <p id="robot-test"></p>
+  </div>
+</div>
+
+<div class="paragraph">
+  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+    nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+    enim ad minim veniam, quis nostrud
+    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
+      nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
+      enim ad minim veniam, quis nostrud </p>
+</div>
+
+<div class="section-two">
+  <div id="big-image">
+  </div>
+  <div class="thumbnail">
+    <div id="images">
+    </div>
+  </div>
 </div>
 
 @endsection

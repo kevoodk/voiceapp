@@ -16,10 +16,7 @@
     enim ad minim veniam, quis nostrud
     Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
       nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-      enim ad minim veniam, quis nostrud </p><br>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-        nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi
-        enim ad minim veniam, quis nostrud</p>
+      enim ad minim veniam, quis nostrud </p>
 </div>
 
 <div class="robot">
@@ -29,20 +26,18 @@
   <p></p>
 </div>
 <div class="back-stripe">
-  <img src="../img/back-stripe.png">
 </div>
 <div class="robot-text-block-2">
-  <p id="robot-test"></p>
+  <div class="text-block-center">
+    <p id="robot-test"></p>
+  </div>
 </div>
 
 <div class="section-two">
-  <div class="middle-banner">
-  </div>
   <div class="p5">
     <img src="../img/p5.png">
   </div>
   <div class="back-stripe-l">
-    <img src="../img/back-stripe-l.png">
   </div>
 
   <div class="paragraph-l">
