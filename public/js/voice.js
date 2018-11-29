@@ -209,12 +209,12 @@ if(mostrecentword.indexOf("start")!==-1){
 }
 
 }
-setTimeout(function bigImage(){
+function bigImage(){
   console.log('bigImage search');
   var getSrc = $('.find-image');
   var findSrc = $(getSrc[0]).attr('src');
   document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>";
-}, 7000);
+}
 
 var keyword = "dog";
 var newCount = 0;
@@ -242,7 +242,7 @@ var newCount = 0;
 
        imageCount ++;
 
-
+       setTimeout(bigImage, 2000);
    }
    function getPageWelcome(menuArray){
       var location = window.location.href;
