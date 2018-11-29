@@ -149,6 +149,23 @@ if(mostrecentword.indexOf("hello")!==-1){
       myVoice.speak("hello"+ userToString +" here is the command list I can do for now");
       document.getElementById("robot-voice").innerHTML = talk;
 }
+if(mostrecentword.indexOf("post")!==-1){
+  blog();
+}
+function blog(){
+var convertToString = stringArray.toString();
+var convertToLower = convertToString.toLowerCase();
+
+      var find = "open";
+      var text = convertToLower;
+      keyword = text.match(new RegExp(find + '\\s(\\w+)'))[1];
+      stringArray = [keyword];
+      $('.btn')[stringArray.toString() - 1].click()
+
+
+
+   console.log(stringArray.toString());
+}
 if(mostrecentword.indexOf("search")!==-1){
   search();
 }
@@ -248,7 +265,7 @@ var newCount = 0;
       var location = window.location.href;
       window.onload = function(){
       var menu = menuArray.toString();
-      var commandlist = "Here is my commands for this page </br> Down, Up </br> Hide, Show </br> Read </br>" + menu;
+      var commandlist = "Here is my commands for this page </br> Down, Up </br> Hide, Show </br> Read </br> Navigate in the menu by say the names";
 
       if(location.includes("home")){
       document.getElementById("robot-test").innerHTML = commandlist;
