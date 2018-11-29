@@ -18,7 +18,8 @@ class UserController extends Controller
     }
 
     public function update_avatar(Request $request){
-
+          $userId = auth()->user()->id;
+          $findPosts = Post::where("user_id", "=", $userId)->get();
         if($request->hasFile('avatar')){
           $avatar = $request->file('avatar');
           $filename = time() . '.' . $avatar->getClientOriginalExtension();
@@ -29,6 +30,6 @@ class UserController extends Controller
           $user->save();
         }
 
-        return view('/userprofile', array('user' => Auth::user()) );
+        return view('/userprofile', compact('findPosts'), array('user' => Auth::user()) );
     }
 }
