@@ -12,16 +12,17 @@
 
 <div class="profile-block">
   <img src="/uploads/avatars/{{ $user->avatar }}">
-  <div class="profile-title">
-    <h2>{{ Auth::user()->name }}'s profile</h2>
+  <div class="profile-block-info">
+    <div class="profile-title">
+      <h2>{{ Auth::user()->name }}'s profile</h2>
+    </div>
+    <form enctype="multipart/form-data" action="/userprofile" method="POST">
+      <label>Update profile image</label>
+      <input type="file" name="avatar">
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+      <button type="submit" name="button">Submit</button>
+    </form>
   </div>
-  <form enctype="multipart/form-data" action="/userprofile" method="POST">
-    <label>Update profile image</label>
-    <input type="file" name="avatar">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-    <button type="submit" name="button">Submit</button>
-  </form>
-</div>
 </div>
 
 <div class="robot">
