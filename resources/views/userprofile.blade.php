@@ -17,8 +17,8 @@
       <h2>{{ Auth::user()->name }}'s profile</h2>
     </div>
     <form enctype="multipart/form-data" action="/userprofile" method="POST">
-      <label>Update profile image</label>
-      <input type="file" name="avatar">
+      <input type="file" name="avatar" id="file" class="inputFile">
+      <label for="file"><i class="fa fa-upload" aria-hidden="true"></i>Update profile image</label>
       <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <button type="submit" name="button">Submit</button>
     </form>
@@ -41,13 +41,17 @@
 </div>
 
 <div class="section-two">
-
+    <div class="section-title">My posts</div>
     <div id="posts">
       @foreach($findPosts as $post)
-        <h3>{{$post->title}}</h3>
-        <p>{{$post->body}}</p>
+      <div class="my-post-body">
+        <div class="blog-left">
+          <div class="blog-text-title"><p>{{ $post->title }}</p></div>
+          <div class="blog-textarea"><p>{{ $post->body }}</p></div>
+        </div>
+        <div class="blog-right"><img src="{{ $post->image }}"/></div>
+      </div>
       @endforeach
     </div>
-
 </div>
 @endsection
