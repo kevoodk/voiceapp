@@ -333,7 +333,7 @@ input {
 button {
   height: 40px;
   float: right;
-  background: #00d3b3;
+  background: none;
   border: none;
   color: #fff;
   font-family: 'Raleway', sans-serif;
@@ -341,13 +341,10 @@ button {
   font-size: 17px;
   padding: 0 15px 0 15px;
   margin-top: 20px;
+  font-weight: 700;
 }
 
-button:hover {
-  background: none;
-  color: #00d3b3;
-  border: 1px solid #00d3b3;
-}
+
 
 /*welcome page*/
 
@@ -453,6 +450,53 @@ li {
   overflow: hidden;
   margin-top: 50px;
   margin-bottom: 50px;
+  position: relative;
+}
+
+.loader {
+}
+.loader-dots {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loader-dot {
+  margin: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #00D3B3;
+  transform: scale(0.5);
+  animation: scale-dot 1.2s ease-out infinite;
+  &:nth-of-type(2) {
+    animation-delay: 0.2s;
+  }
+  &:nth-of-type(3) {
+    animation-delay: 0.3s;
+  }
+  &:nth-of-type(4) {
+    animation-delay: 0.4s;
+  }
+  &:nth-of-type(5) {
+    animation-delay: 0.5s;
+  }
+}
+
+@keyframes scale-dot {
+  0% {
+    transform: scale(0.5);
+  }
+  25% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(0.5);
+  }
 }
 
 #big-image img{
@@ -535,7 +579,7 @@ margin-top: 6.5%;
   color: #fff;
 }
 
-.contacts-form button {
+.contacts-form form button {
   width: auto;
   height: 50px;
   text-align: center;
@@ -544,14 +588,19 @@ margin-top: 6.5%;
   background: none;
   float: left;
   margin-top: 60px;
+  font-weight: 700;
 }
 
-.contacts-form button a {
+.contacts-form form button a {
   font-size: 16px;
   font-weight: 700;
   font-family: 'Raleway', sans-serif;
 	text-transform: uppercase;
   text-decoration: none;
+  color: #fff;
+}
+
+.contacts-form button a:hover {
   color: #fff;
 }
 
@@ -800,6 +849,7 @@ canvas{
   padding: 0 15px 0 15px;
   margin: 0;
   cursor: pointer;
+  font-weight: 300;
 }
 
 .blog-text-comments button:hover {

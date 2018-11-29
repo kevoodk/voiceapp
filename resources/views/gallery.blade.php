@@ -35,6 +35,13 @@
 
 <div class="section-two">
   <div id="big-image">
+    <div class="loader">
+      <div class="loader-dots">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+      </div>
+    </div>
   </div>
   <div class="thumbnail">
     <div id="images">

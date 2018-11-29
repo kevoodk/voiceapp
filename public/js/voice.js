@@ -15,7 +15,7 @@ function setup() {
 }
 
 // console.log(window.location.href.toString());
-var menuArray = ["in", "register", "home", "gallery", "contacts", "about", "game"];
+var menuArray = ["in", "register", "home", "gallery", "contacts", "about", "game", "blog"];
 var inputArray = ["name", "email", "password", "access", "submit", "title"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous", "choose"];
 getPageWelcome(menuArray);
@@ -35,6 +35,8 @@ function parseResult() {
     if (chechMenuArray) {
         if (mostrecentword.indexOf("in") !== -1) {
             window.location.href = "login";
+        } else if (mostrecentword.indexOf("blog") !== -1) {
+            window.location.href = "posts";
         } else {
             window.location.href = mostrecentword;
         }
