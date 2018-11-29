@@ -6,7 +6,8 @@ let stringArray = [];
 var i = 1;
 var readArray = [];
 var imageCount = 0;
-
+var keyword = "dog";
+var newCount = 0;
 function setup() {
     myRec.start();
     // start engine
@@ -235,32 +236,21 @@ function bigImage() {
     document.getElementById("big-image").innerHTML = "<img src=" + findSrc + "/>";
 }
 
-var keyword = "dog";
-var newCount = 0;
+
 
 function newImage() {
-
     $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?", {
             tags: keyword,
             tagmode: "any",
             format: "json"
         },
-
-
-
         function(data) {
             var rnd = Math.floor(Math.random() * data.items.length);
-
             var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
             var html1 = "<div class=\" images\"><img class=\"find-image\" style=\"width:100%;\" src=\"" + image_src + "\"></div>";
             document.getElementById("images").innerHTML += html1;
-
-
-
         });
-
     imageCount++;
-
     setTimeout(bigImage, 2000);
 }
 
