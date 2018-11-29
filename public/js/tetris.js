@@ -1,5 +1,6 @@
 var myRec = new p5.SpeechRec('en-US', parseResult);
   var movement = 300;
+var menuArray = ["in", "register", "home", "gallery", "contacts", "about", "game", "blog"];
    // new P5.SpeechRec object
   myRec.continuous = true; // do continuous recognition
   myRec.interimResults = false; // allow partial recognition (faster, less accurate)
@@ -9,6 +10,16 @@ var myRec = new p5.SpeechRec('en-US', parseResult);
   function parseResult(){
 
   var mostrecentword = myRec.resultString.split(' ').pop();
+  var chechMenuArray = menuArray.includes(mostrecentword);
+  if (chechMenuArray) {
+      if (mostrecentword.indexOf("in") !== -1) {
+          window.location.href = "login";
+      } else if (mostrecentword.indexOf("blog") !== -1) {
+          window.location.href = "posts";
+      } else {
+          window.location.href = mostrecentword;
+      }
+  }
   if(mostrecentword.indexOf("begin")!==-1){
     init();
     myRec.interimResults = true;

@@ -76,7 +76,7 @@
               </a>
             </li>
               <li class="menu-item sub-menu">
-                <a class="" href="{{ route('logout') }}"
+                <a id="logout" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">
                 {{ __('Logout') }}

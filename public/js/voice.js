@@ -8,6 +8,7 @@ var readArray = [];
 var imageCount = 0;
 var keyword = "dog";
 var newCount = 0;
+var commandlist;
 function setup() {
     myRec.start();
     // start engine
@@ -16,7 +17,7 @@ function setup() {
 
 // console.log(window.location.href.toString());
 var menuArray = ["in", "register", "home", "gallery", "contacts", "about", "game", "blog"];
-var inputArray = ["name", "email", "password", "access", "submit", "title"];
+var inputArray = ["name", "email", "password", "access", "submit", "title", "out"];
 var commandsArray = ["down", "up", "hide", "show", "next", "previous", "choose"];
 getPageWelcome(menuArray);
 
@@ -67,6 +68,8 @@ function parseResult() {
             document.getElementById("register").click();
         } else if (mostrecentword.indexOf("access") !== -1) {
             document.getElementById("login").click();
+        } else if(mostrecentword.indexOf("out") !== -1) {
+          document.getElementById("logout").click();
         }
     }
     if (mostrecentword.indexOf("create") !== -1) {
@@ -92,6 +95,8 @@ function parseResult() {
         var x = $('#big-image img').attr('src');
         $('#getsrc').val(x);
         console.log()
+    } else if(mostrecentword.indexOf("command") !==-1){
+      myVoice.speak(commandlist);
     }
 
     // next and previous gallery
@@ -196,37 +201,39 @@ function parseResult() {
     } else if (mostrecentword.indexOf("stop" || "Stop") !== -1) {
         var convertToString = stringArray.toString();
         var convertToLower = convertToString.toLowerCase();
-        if (convertToLower.includes("bob hello")) {
-            var line = "new line";
-            var find = "bob hello";
-            var result = convertToString.replace(new RegExp(find + '\\s(\\w+)'), "$1" + "\n");
-
-        }
-        if (convertToLower.includes("bob switch")) {
-            var find = "bob switch";
-            var edit = "bob with";
-
-            var result1 = "";
-            var text = convertToLower;
-            var result = text.match(new RegExp(find + '\\s(\\w+)'))[1];
-            console.log(result);
-            if (text.includes(edit)) {
-
-                result1 = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
-            }
-
-            var replace = convertToString.replace(result, result1);
-            var remove = replace.indexOf('stop');
-            replace = replace.substring(0, remove)
-            console.log(replace);
-            document.getElementById("question").innerHTML = replace;
-
-        } else {
-
-            document.getElementById("question").innerHTML = convertToString;
-        }
-        result;
-        result1;
+        convertToLower = convertToLower.replace(/stop/g, '');
+        document.getElementById("question").innerHTML = convertToLower;
+        // if (convertToLower.includes("bob hello")) {
+        //     var line = "new line";
+        //     var find = "bob hello";
+        //     var result = convertToString.replace(new RegExp(find + '\\s(\\w+)'), "$1" + "\n");
+        //
+        // }
+        // if (convertToLower.includes("bob switch")) {
+        //     var find = "bob switch";
+        //     var edit = "bob with";
+        //
+        //     var result1 = "";
+        //     var text = convertToLower;
+        //     var result = text.match(new RegExp(find + '\\s(\\w+)'))[1];
+        //     console.log(result);
+        //     if (text.includes(edit)) {
+        //
+        //         result1 = text.match(new RegExp(edit + '\\s(\\w+)'))[1];
+        //     }
+        //
+        //     var replace = convertToString.replace(result, result1);
+        //     var remove = replace.indexOf('stop');
+        //     replace = replace.substring('stop', '');
+        //     console.log(replace);
+        //     document.getElementById("question").innerHTML = replace;
+        //
+        // } else {
+        //     convertToString.replace('stop', '');
+        //     document.getElementById("question").innerHTML = convertToString;
+        // }
+        // result;
+        // result1;
     }
 
 }
@@ -260,26 +267,27 @@ function getPageWelcome(menuArray) {
     var location = window.location.href;
     window.onload = function() {
         var menu = menuArray.toString();
-        var commandlist = "Here is my commands for this page :</br></br> <span>Down, Up</span> - Scroll the page. </br> Hide, Show - Hide or show the content of the page. </br> Read - Read the content of the page. </br> Navigate in the menu by saying the page names.";
+        commandlist = "Here is my commands for this page :</br></br> <span>Down, Up</span> - Scroll the page. </br> Hide, Show - Hide or show the content of the page. </br> Read - Read the content of the page. </br> Navigate in the menu by saying the page names.";
 
         if (location.includes("home")) {
-            document.getElementById("robot-test").innerHTML = commandlist;
-            myVoice.speak(commandlist);
+
         } else if (location.includes("about")) {
-            document.getElementById("robot-test").innerHTML = commandlist;
+
         } else if (location.includes("gallery")) {
-            document.getElementById("robot-test").innerHTML = commandlist + "</br>To search the picture - Say: Find - \"the object what you are looking for\" - search. </br> Say Next or Previous to navigate in the gallery.";
+            commandlist = commandlist + "</br>To search the picture - Say: Find - \"the object what you are looking for\" - search. </br> Say Next or Previous to navigate in the gallery.";
+
         } else if (location.includes("game")) {
-            document.getElementById("robot-test").innerHTML = commandlist + "</br> Move the snake by saying Up, Down, Left, Right";
+            commandlist = commandlist + "</br> Move the snake by saying Up, Down, Left, Right";
         } else if (location.includes("posts")) {
-            document.getElementById("robot-test").innerHTML = commandlist + "</br> Say create to make a blog </br> say open, and the number post you want to open, and end with post";
+          commandlist = commandlist + "</br> Say create to make a blog </br> say open, and the number post you want to open, and end with post";
         } else if (location.includes("contacts")) {
-            document.getElementById("robot-test").innerHTML = commandlist + "</br> Say your name, followed by \"name\" </br> Say your email followed by \" email.\" Say 'at' for getting @ </br> Say start to start writing, Say stop when you are done";
+            commandlist = commandlist + "</br> Say your name, followed by \"name\" </br> Say your email followed by \" email.\" Say 'at' for getting @ </br> Say start to start writing, Say stop when you are done";
         } else if (location.includes("userprofile")) {
             console.log('profile page')
         } else if (location.includes("profile")) {
             console.log('admin page')
         }
+        document.getElementById("robot-test").innerHTML = commandlist;
     }
 
 }
