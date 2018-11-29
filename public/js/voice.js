@@ -108,6 +108,7 @@ myVoice.speak(readArray.toString());
 }
 function next(){
   i++;
+  console.log(i);
   var prev = i - 1;
 var getClass = $('.images');
 var addBorder = $(getClass[i]).addClass("selected");
@@ -213,7 +214,8 @@ setTimeout(function bigImage(){
   var getSrc = $('.find-image');
   var findSrc = $(getSrc[0]).attr('src');
   document.getElementById("big-image").innerHTML = "<img src="+ findSrc +"/>";
-}, 5000);
+}, 7000);
+
 var keyword = "dog";
 var newCount = 0;
    function newImage(){
@@ -237,11 +239,8 @@ var newCount = 0;
 
 
        });
-       if(imageCount == 9){
-         bigImage();
-       }else{
+
        imageCount ++;
-     }
 
 
    }
