@@ -2,6 +2,7 @@
 
 html {
   height: auto;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -933,7 +934,7 @@ margin: 0 0 10px 0;
 
 .profile-block {
   float: left;
-  width: 40%;
+  width: 55%;
   height: 26%;
   position: absolute;
   top: 36%;
@@ -948,10 +949,19 @@ margin-left: 80px;
 border-radius: 5px;
 }
 
+.profile-block-info {
+  float: left;
+  height: 100%;
+  margin-left: 5px;
+}
+
 .profile-block form {
 float: left;
 width: 45%;
-  margin: 50px 0 0 20px;
+margin: 11% 0 0 20px;
+position: absolute;
+bottom: 0;
+left: 36%;
 }
 
 .profile-block form label {
@@ -962,6 +972,8 @@ width: 45%;
 .profile-block form input {
   border: none;
   float: left;
+  padding: 0;
+  width: 100%;
 }
 
 .profile-block form button {
@@ -974,7 +986,7 @@ width: 45%;
   text-transform: uppercase;
   font-size: 17px;
   padding: 0 15px 0 15px;
-  margin-top: 20px;
+  margin: 0;
 }
 
 .profile-title {
