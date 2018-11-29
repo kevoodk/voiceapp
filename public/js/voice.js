@@ -75,10 +75,10 @@ if(mostrecentword.indexOf("posted")!==-1){
 
 // Scroll up and down
 if(mostrecentword.indexOf("down")!==-1){
-window.scrollBy(0, 100);
+window.scrollBy(0, 500);
 }
 else if(mostrecentword.indexOf("up")!==-1){
-window.scrollBy(0, -100);
+window.scrollBy(0, -500);
 }
 // Show / Hide the entire screen
 else if(mostrecentword.indexOf("show")!==-1){
