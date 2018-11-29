@@ -260,7 +260,7 @@ function getPageWelcome(menuArray) {
     var location = window.location.href;
     window.onload = function() {
         var menu = menuArray.toString();
-        var commandlist = "Here is my commands for this page </br> Down, Up </br> Hide, Show </br> Read </br> Navigate in the menu by say the names";
+        var commandlist = "Here is my commands for this page :</br></br> <span>Down, Up</span> - Scroll the page. </br> Hide, Show - Hide or show the content of the page. </br> Read - Read the content of the page. </br> Navigate in the menu by saying the page names.";
 
         if (location.includes("home")) {
             document.getElementById("robot-test").innerHTML = commandlist;
@@ -268,7 +268,7 @@ function getPageWelcome(menuArray) {
         } else if (location.includes("about")) {
             document.getElementById("robot-test").innerHTML = commandlist;
         } else if (location.includes("gallery")) {
-            document.getElementById("robot-test").innerHTML = commandlist + "</br> Say:\"Find 'what you are looking for' search \" </br> Say Next or Previous to navigate in the gallery";
+            document.getElementById("robot-test").innerHTML = commandlist + "</br>To search the picture - Say: Find - \"the object what you are looking for\" - search. </br> Say Next or Previous to navigate in the gallery.";
         } else if (location.includes("game")) {
             document.getElementById("robot-test").innerHTML = commandlist + "</br> Move the snake by saying Up, Down, Left, Right";
         } else if (location.includes("posts")) {
