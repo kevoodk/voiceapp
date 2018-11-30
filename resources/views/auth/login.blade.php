@@ -50,6 +50,8 @@
   <p></p>
 </div>
 <div class="robot-text-block-2">
-  <p id="robot-test"></p>
+  <div class="text-block-center">
+    <p id="robot-test"></p>
+  </div>
 </div>
 @endsection

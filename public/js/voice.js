@@ -267,21 +267,21 @@ function getPageWelcome(menuArray) {
     var location = window.location.href;
     window.onload = function() {
         var menu = menuArray.toString();
-        commandlist = "Here is my commands for this page :</br></br> <span>Down, Up</span> - Scroll the page. </br> Hide, Show - Hide or show the content of the page. </br> Read - Read the content of the page. </br> Navigate in the menu by saying the page names.";
+        commandlist = "<span style=\"font-weight:700;\">Here is my commands for this page :</span></br></br> <span style=\"font-weight:700; color:#fff;\">Down, Up</span> - Scroll the page. </br> <span style=\"font-weight:700; color:#fff;\">Hide, Show</span> - Hide or show the content of the page. </br> <span style=\"font-weight:700; color:#fff;\">Read</span> - Read the content of the page. </br> <span style=\"font-weight:700; color:#fff;\">Navigate in the menu by saying the page names.</span>";
 
         if (location.includes("home")) {
 
         } else if (location.includes("about")) {
 
         } else if (location.includes("gallery")) {
-            commandlist = commandlist + "</br>To search the picture - Say: Find - \"the object what you are looking for\" - search. </br> Say Next or Previous to navigate in the gallery.";
+            commandlist = commandlist + "</br>To search the picture - Say: <span style=\"font-weight:700; color:#fff;\">Find</span> - \"the <span style=\"font-weight:700; color:#fff;\">object</span> what you are looking for</span>\" - <span style=\"font-weight:700; color:#fff;\">search.</span> </br> Say <span style=\"font-weight:700; color:#fff;\">Next</span> or <span style=\"font-weight:700; color:#fff;\">Previous</span> to navigate in the gallery.";
 
         } else if (location.includes("game")) {
-            commandlist = commandlist + "</br> Move the snake by saying Up, Down, Left, Right";
+            commandlist = commandlist + "</br> Move the snake by saying <span style=\"font-weight:700; color:#fff;\">Up</span>, <span style=\"font-weight:700; color:#fff;\">Down</span>, <span style=\"font-weight:700; color:#fff;\">Left</span>, <span style=\"font-weight:700; color:#fff;\">Right</span>";
         } else if (location.includes("posts")) {
-          commandlist = commandlist + "</br> Say create to make a blog </br> say open, and the number post you want to open, and end with post";
+          commandlist = commandlist + "</br> Say <span style=\"font-weight:700; color:#fff;\">create</span> to make a blog. </br> say <span style=\"font-weight:700; color:#fff;\">open</span>, and the <span style=\"font-weight:700; color:#fff;\">number</span> post you want to open, and end with <span style=\"font-weight:700; color:#fff;\">post</span>";
         } else if (location.includes("contacts")) {
-            commandlist = commandlist + "</br> Say your name, followed by \"name\" </br> Say your email followed by \" email.\" Say 'at' for getting @ </br> Say start to start writing, Say stop when you are done";
+            commandlist = commandlist + "</br> Say your name, followed by <span style=\"font-weight:700; color:#fff;\">\"name\"</span> </br> Say your email followed by <span style=\"font-weight:700; color:#fff;\">\" email.\"</span> Say <span style=\"font-weight:700; color:#fff;\">'at'</span> for getting <span style=\"font-weight:700; color:#fff;\">@</span> </br> Say <span style=\"font-weight:700; color:#fff;\">start</span> to start writing, Say <span style=\"font-weight:700; color:#fff;\">stop</span> when you are done.";
         } else if (location.includes("userprofile")) {
             console.log('profile page')
         } else if (location.includes("profile")) {

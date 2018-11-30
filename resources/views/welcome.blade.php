@@ -28,8 +28,10 @@
           <div class="robot">
             <img src="../img/robot_v2.png">
           </div>
-          <div class="robot-text-block">
-            <p></p>
+          <div class="robot-text-block-2">
+            <div class="text-block-center">
+              <p id="robot-test"></p>
+            </div>
           </div>
             @if (Route::has('login'))
                 <div class="landing-nav">

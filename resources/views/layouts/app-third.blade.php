@@ -25,6 +25,7 @@
     <link href="{{ asset('css/custom-second.css') }}" rel="stylesheet">
 </head>
 <body>
+  <div class="landing-nav"></div>
   @guest
   <li class="nav-item">
     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -58,9 +59,15 @@
       </li>
       <li class="menu-item">
         <a>
+          <img src="/uploads/avatars/{{ Auth::user()->avatar }}">
           {{ Auth::user()->name }}&nbsp;<span><i class="fas fa-caret-down"></i></span>
         </a>
         <ul class="dropdown">
+          <li class="menu-item sub-menu">
+            <a id="logout" href="{{ url('/userprofile') }}">
+            Profile
+          </a>
+        </li>
           <li class="menu-item sub-menu">
             <a id="logout" href="{{ route('logout') }}"
             onclick="event.preventDefault();
