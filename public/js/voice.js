@@ -287,6 +287,9 @@ function getPageWelcome(menuArray) {
         } else if (location.includes("profile")) {
             console.log('admin page')
         }
+        else if (location.includes("register")) {
+           commandlist = commandlist + "<span style=\"font-weight:700; color:#fff;\">'Your name' + name </span> - To write your name </br> <span style=\"font-weight:700; color:#fff;\">'Your email' + name (Say 'AT' for @)</span> - To write your email </br> <span style=\"font-weight:700; color:#fff;\">'Say your password' + name </span> To write your password </br> <span style=\"font-weight:700; color:#fff;\">Say submit</span> - To register";
+       }
         document.getElementById("robot-test").innerHTML = commandlist;
     }
 

@@ -7,6 +7,8 @@ var menuArray = ["in", "register", "home", "gallery", "contacts", "about", "game
   function setup(){
     	myRec.start(); // start engine
   }
+  var commandlist = "<span style=\"font-weight:700;\">Here is my commands for this page :</span></br></br> <span style=\"font-weight:700; color:#fff;\">Down, Up, Left, Right</span> - Control the snake. </br> <span style=\"font-weight:700; color:#fff;\">Faster, Slower</span> - Control the speed</br> <span style=\"font-weight:700; color:#fff;\">Begin</span> - To start the game </br><span style=\"font-weight:700; color:#fff;\">Navigate in the menu by saying the page names.</span>";
+  document.getElementById("robot-test").innerHTML = commandlist;
   function parseResult(){
 
   var mostrecentword = myRec.resultString.split(' ').pop();
